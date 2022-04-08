@@ -1,6 +1,7 @@
 body {
 	font: Consolas;
 	background-color: black;
+	font: Consolas;
 }
 h1 {
 	color: green;
@@ -11,5 +12,4 @@ ul {
 logo {
 	COLOR: #ff0000;
 	size: 3;
-	font: Consolas;
 }
