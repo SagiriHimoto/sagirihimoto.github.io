@@ -3,6 +3,7 @@ body {
 	background-color: black;
 	font-family: Consolas;
 	outline-width: 2;
+	outline-color: red;
 }
 h1 {
 	color: green;
