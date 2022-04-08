@@ -1,0 +1,14 @@
+body {
+	background-color: powderblue;
+}
+h1 {
+	color: blue;
+}
+ul {
+	color: red;
+}
+logo {
+	COLOR: #ff0000;
+	size: 3;
+	font: Consolas;
+}
