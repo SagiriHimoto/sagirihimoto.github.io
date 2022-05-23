@@ -1,5 +1,5 @@
 body {
-	background-color: #333333;
+	background-color: #333;
 	font-family: Consolas;
 }
 
@@ -35,6 +35,9 @@ body {
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
+}
+.navigationbar {
+	background-color: #ddd;
 }
 
 /*-----------------------------*/
