@@ -7,7 +7,7 @@ body {
 }
 .BlogPostMain {
 	border: 1px solid transparent;
-	min-height: 800px;
+	min-height: 400px;
 	padding-left: 20px;
 	padding-top: 200px;
 }
@@ -27,7 +27,7 @@ body {
 .BlogText {
 	background-color: #fff;
 	border: 1px solid #9fa1a3;
-	min-height: 800px;
+	min-height: 400px;
 	max-width: 950px;
 	border-radius: 5px;
 }
@@ -46,12 +46,6 @@ body {
 	font-size: 12px;
 	margin: 15px 0px 5px 40px;
 }
-.placeholdertext{
-	background-color: #fff;
-	color: #000;
-	width: 100%;
-	font-size: 20px;
-}
 
 /* Change the color of links on hover */
 .navigationbar  a:hover {
@@ -61,7 +55,6 @@ body {
 .navigationbar  a.active {
 }
 .navigationbar {
-	border: 1px solid transparent;
 	background-color: #FFF;
 	height: 45px;
 	position: fixed;
@@ -77,6 +70,23 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+}
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #ff6600;
+  width: 0%;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 
 /*-----------------------------*/
