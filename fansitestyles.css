@@ -1,0 +1,25 @@
+body {
+	background-color: #333333;
+	font-family: Consolas;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 14px;
+	font-weight: 400;
+    line-height: 1.5;
+}
+
+ponytown-playserver-btn {
+	background-color: #5cb85c;
+    border-color: #5cb85c;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: middle;
+    box-sizing: border-box;
+	cursor: pointer;
+	flex: 1 1 auto;
+    position: relative;
+	border-radius: 4px;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+	text-align: center!important;
+}
