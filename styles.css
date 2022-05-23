@@ -15,10 +15,13 @@ body {
 	margin: 0px 0px 15px 40px;
 }
 .TextFlavour {
-	border: 3px solid var(--parent-mainfill);
+	border: 2px solid var(--parent-mainfill);
+	border-right: 4px solid var(--parent-mainfill);
+	border-left: 4px solid var(--parent-mainfill);
 	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
 	border-radius: 3px;
-	font-size: 70%;
+	font-size: var(--parent-flavourfontsize);
 }
 .BlogText {
 	background-color: #fff;
