@@ -7,8 +7,9 @@ body {
 }
 .BlogPostMain {
 	border: 1px solid transparent;
-	width: 97.5%;
 	min-height: 800px;
+	padding-left: 20px;
+	padding-top: 200px;
 }
 .BlogPostTitle {
 	font-size: 20px;
@@ -27,8 +28,14 @@ body {
 	background-color: #fff;
 	border: 1px solid #9fa1a3;
 	min-height: 800px;
-	margin: 200px 0px 0px 15px;
 	max-width: 950px;
+	border-radius: 5px;
+}
+.RightSideBar {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	width: 35px;
+	min-height: 100px;
 	border-radius: 5px;
 }
 .ABlogText {
