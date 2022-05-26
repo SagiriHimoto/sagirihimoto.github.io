@@ -1,3 +1,13 @@
+/* Vars */
+:root {
+	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
+	--SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
+}
+
+/*  */
+html {
+	scroll-behaviour: smooth;
+}
 body {
 	background-color: #333;
 	font-family: Consolas;
@@ -13,7 +23,7 @@ body {
 }
 .BlogPostTitle {
 	font-size: 20px;
-	margin: 0px 0px 15px 40px;
+	margin: 5px 0px 15px 40px;
 }
 .TextFlavour {
 	border: 2px solid var(--parent-mainfill);
@@ -22,21 +32,17 @@ body {
 	background-color: var(--parent-mainfill);
 	color: var(--parent-textfill);
 	border-radius: 3px;
+	margin: auto 0 auto 5px;
 	font-size: var(--parent-flavourfontsize);
 }
 .BlogText {
 	background-color: #fff;
 	border: 1px solid #9fa1a3;
 	min-height: 400px;
-	max-width: 950px;
+	max-width: 70%;
 	border-radius: 5px;
-}
-.RightSideBar {
-	background-color: #fff;
-	border: 1px solid #9fa1a3;
-	width: 35px;
-	min-height: 100px;
-	border-radius: 5px;
+	float: left;
+	margin-right: 25px;
 }
 .ABlogText {
 	margin: 0px 20px 20px 40px;
@@ -44,7 +50,65 @@ body {
 .AuthorTextMuted {
 	color: rgb(120, 124, 126);
 	font-size: 12px;
-	margin: 15px 0px 5px 40px;
+	margin: 15px 0px 0px 40px;
+}
+
+.RightSideBar {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+}
+.RightSideBarTitle {
+	border: 1px solid var(--parent-mainfill);
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.avatarborder {
+	position: absolute;
+	border: 1px solid #9fa1a3;
+	top: 50px;
+	left: 25px;
+	width: 80px;
+	height: 80px;
+	background-color: #333;
+	border-radius: 5px;
+}
+.avatar {
+	border: 3px solid #fff;
+	width: 74px;
+	height: 74px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+.RightSideBarBottom {
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	margin-bottom: 25px;
+}
+.RightSideBarMiddle {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	float: left;
 }
 
 /* Change the color of links on hover */
@@ -65,7 +129,7 @@ body {
 /* Style the links inside the navigation bar */
 .navigationbar a {
   float: right;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -74,7 +138,7 @@ body {
 /* The progress container (grey background) */
 .progress-container {
   width: 100%;
-  height: 8px;
+  height: 0%;
   background: #ccc;
   transition: all 0s ease-in-out;
   transition: height 0.5s ease-in-out;
@@ -82,11 +146,15 @@ body {
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-  height: 8px;
-  background: #ff6600;
+  height: 0%;
+  background: #47d182;
   width: 0%;
   transition: all 0s ease-in-out;
   transition: height 0.5s ease-in-out;
+}
+
+.AuthorInfoAndIcon {
+	border: 1px solid transparent;
 }
 
 /*-----------------------------*/
