@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Vars */
 :root {
 	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
@@ -163,4 +164,519 @@ body {
 
 /*-----------------------------*/
 /*-----------------------------*/
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+/* Vars */
+:root {
+	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
+	--SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
+}
+
+/*  */
+html {
+	scroll-behaviour: smooth;
+}
+body {
+	background-color: #333;
+	font-family: Consolas;
+	letter-spacing: -0.5px;
+	margin:0;
+	padding:0;
+}
+.BlogPostBanner {
+/* 	-webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+	mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0)); */
+	width: 100%;
+	height: 150px;	
+	background-size: 100%;
+	background-repeat: no-repeat;
+	border-top: 40px solid #fff;
+	filter: gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+	/* background-image:  linear-gradient(to bottom, transparent, #ff9999); */
+	background: linear-gradient(to top, #333, #333 5%, #47d182 100%);
+}
+.BlogPostMain {
+	border: 1px solid transparent;
+	min-height: 400px;
+	padding-left: 20px;
+	padding-top: 25px;
+}
+.BlogPostTitle {
+	font-size: 20px;
+	margin: 5px 0px 15px 40px;
+}
+.TextFlavour {
+	border: 2px solid var(--parent-mainfill);
+	border-right: 4px solid var(--parent-mainfill);
+	border-left: 4px solid var(--parent-mainfill);
+	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
+	border-radius: 3px;
+	margin: auto 0 auto 5px;
+	font-size: var(--parent-flavourfontsize);
+}
+.BlogText {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-height: 400px;
+	max-width: 70%;
+	border-radius: 5px;
+	float: left;
+	margin-right: 25px;
+}
+.ABlogText {
+	margin: 0px 20px 20px 40px;
+}
+.AuthorTextMuted {
+	color: rgb(120, 124, 126);
+	font-size: 12px;
+	margin: 15px 0px 0px 40px;
+}
+
+.RightSideBar {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+}
+.RightSideBarTitle {
+	border: 1px solid var(--parent-mainfill);
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.avatarborder {
+	position: absolute;
+	border: 1px solid #9fa1a3;
+	top: 50px;
+	left: 25px;
+	width: 80px;
+	height: 80px;
+	background-color: #333;
+	border-radius: 5px;
+}
+.avatar {
+	border: 3px solid #fff;
+	width: 74px;
+	height: 74px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+.RightSideBarBottom {
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	margin-bottom: 25px;
+}
+.RightSideBarMiddle {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	float: left;
+}
+
+/* Change the color of links on hover */
+.navigationbar  a:hover {
+}
+
+/* Add a color to the active/current link */
+.navigationbar  a.active {
+}
+.navigationbar {
+	background-color: #FFF;
+	height: 45px;
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid #9fa1a3;
+	margin: 0px;
+}
+/* Style the links inside the navigation bar */
+.navigationbar a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 0%;
+  background: #ccc;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 0%;
+  background: #47d182;
+  width: 0%;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+.AuthorInfoAndIcon {
+	border: 1px solid transparent;
+}
+
+/*-----------------------------*/
+/*-------Image-Gallery---------*/
+/*-----------------------------*/
+
+/*-----------------------------*/
+/*-----------------------------*/
+=======
+/* Vars */
+:root {
+	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
+	--SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
+}
+
+/*  */
+html {
+	scroll-behaviour: smooth;
+}
+body {
+	background-color: #333;
+	font-family: Consolas;
+	letter-spacing: -0.5px;
+	margin:0;
+	padding:0;
+}
+.BlogPostMain {
+	border: 1px solid transparent;
+	min-height: 400px;
+	padding-left: 20px;
+	padding-top: 200px;
+}
+.BlogPostTitle {
+	font-size: 20px;
+	margin: 5px 0px 15px 40px;
+}
+.TextFlavour {
+	border: 2px solid var(--parent-mainfill);
+	border-right: 4px solid var(--parent-mainfill);
+	border-left: 4px solid var(--parent-mainfill);
+	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
+	border-radius: 3px;
+	margin: auto 0 auto 5px;
+	font-size: var(--parent-flavourfontsize);
+}
+.BlogText {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-height: 400px;
+	max-width: 70%;
+	border-radius: 5px;
+	float: left;
+	margin-right: 25px;
+}
+.ABlogText {
+	margin: 0px 20px 20px 40px;
+}
+.AuthorTextMuted {
+	color: rgb(120, 124, 126);
+	font-size: 12px;
+	margin: 15px 0px 0px 40px;
+}
+
+.RightSideBar {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+}
+.RightSideBarTitle {
+	border: 1px solid var(--parent-mainfill);
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.avatarborder {
+	position: absolute;
+	border: 1px solid #9fa1a3;
+	top: 50px;
+	left: 25px;
+	width: 80px;
+	height: 80px;
+	background-color: #333;
+	border-radius: 5px;
+}
+.avatar {
+	border: 3px solid #fff;
+	width: 74px;
+	height: 74px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+.RightSideBarBottom {
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	margin-bottom: 25px;
+}
+.RightSideBarMiddle {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	float: left;
+}
+
+/* Change the color of links on hover */
+.navigationbar  a:hover {
+}
+
+/* Add a color to the active/current link */
+.navigationbar  a.active {
+}
+.navigationbar {
+	background-color: #FFF;
+	height: 45px;
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid #9fa1a3;
+	margin: 0px;
+}
+/* Style the links inside the navigation bar */
+.navigationbar a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 0%;
+  background: #ccc;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 0%;
+  background: #47d182;
+  width: 0%;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+.AuthorInfoAndIcon {
+	border: 1px solid transparent;
+}
+
+/*-----------------------------*/
+/*-------Image-Gallery---------*/
+/*-----------------------------*/
+
+/*-----------------------------*/
+/*-----------------------------*/
+>>>>>>> 140fe00fd4902b1e5a2d02a5ba79bd58665da455
+=======
+/* Vars */
+:root {
+	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
+	--SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
+}
+
+/*  */
+html {
+	scroll-behaviour: smooth;
+}
+body {
+	background-color: #333;
+	font-family: Consolas;
+	letter-spacing: -0.5px;
+	margin:0;
+	padding:0;
+}
+.BlogPostMain {
+	border: 1px solid transparent;
+	min-height: 400px;
+	padding-left: 20px;
+	padding-top: 200px;
+}
+.BlogPostTitle {
+	font-size: 20px;
+	margin: 5px 0px 15px 40px;
+}
+.TextFlavour {
+	border: 2px solid var(--parent-mainfill);
+	border-right: 4px solid var(--parent-mainfill);
+	border-left: 4px solid var(--parent-mainfill);
+	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
+	border-radius: 3px;
+	margin: auto 0 auto 5px;
+	font-size: var(--parent-flavourfontsize);
+}
+.BlogText {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-height: 400px;
+	max-width: 70%;
+	border-radius: 5px;
+	float: left;
+	margin-right: 25px;
+}
+.ABlogText {
+	margin: 0px 20px 20px 40px;
+}
+.AuthorTextMuted {
+	color: rgb(120, 124, 126);
+	font-size: 12px;
+	margin: 15px 0px 0px 40px;
+}
+
+.RightSideBar {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+}
+.RightSideBarTitle {
+	border: 1px solid var(--parent-mainfill);
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	background-color: var(--parent-mainfill);
+	color: var(--parent-textfill);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.avatarborder {
+	position: absolute;
+	border: 1px solid #9fa1a3;
+	top: 50px;
+	left: 25px;
+	width: 80px;
+	height: 80px;
+	background-color: #333;
+	border-radius: 5px;
+}
+.avatar {
+	border: 3px solid #fff;
+	width: 74px;
+	height: 74px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+.RightSideBarBottom {
+	min-width: 26%;
+	max-width: 26%;
+	border-radius: 5px;
+	float: left;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	margin-bottom: 25px;
+}
+.RightSideBarMiddle {
+	background-color: #fff;
+	border: 1px solid #9fa1a3;
+	min-width: 26%;
+	max-width: 26%;
+	float: left;
+}
+
+/* Change the color of links on hover */
+.navigationbar  a:hover {
+}
+
+/* Add a color to the active/current link */
+.navigationbar  a.active {
+}
+.navigationbar {
+	background-color: #FFF;
+	height: 45px;
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid #9fa1a3;
+	margin: 0px;
+}
+/* Style the links inside the navigation bar */
+.navigationbar a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 0%;
+  background: #ccc;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 0%;
+  background: #47d182;
+  width: 0%;
+  transition: all 0s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+.AuthorInfoAndIcon {
+	border: 1px solid transparent;
+}
+
+/*-----------------------------*/
+/*-------Image-Gallery---------*/
+/*-----------------------------*/
+
+/*-----------------------------*/
+/*-----------------------------*/
+>>>>>>> 140fe00fd4902b1e5a2d02a5ba79bd58665da455
+>>>>>>> Stashed changes
 /*-----------------------------*/
