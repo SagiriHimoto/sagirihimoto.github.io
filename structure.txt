@@ -1,0 +1,41 @@
+HTML
+	HEAD
+		Favicon/Title
+		EmbedTitle
+		EmbedDesc
+		EmbedURL
+		EmbedImage
+		DiscordEmbedColor
+		Javascript.js
+		styles.css
+		flavors.css
+	BODY
+		navigationbar
+			titlish
+				imglogo44
+			helpa
+			abouta
+			homea
+			progress-container
+				progress-bar
+		BlogPostMain (padding)
+			BlogText (white box)
+				AuthorTextMuted
+				ABlogTextTitle
+				ABlogText
+					ABlogTextTitle
+					ABlogTextTitleSmall
+					ABlogTextBold
+					ABlogTextItalics
+					ABlogTextQuotes
+					ABlogTextFiles
+					tooltipable
+					imgHunPerc/imgHalfPerc/imgThirdPerc (imgMarg10left/imgMarg10auto/imgMarg10right)
+					googdocembed
+					pastembed
+					ghembed
+					audioembed
+					VideoFrame
+			BlogText (white box)
+				ABlogTextTitle
+		FooterPart

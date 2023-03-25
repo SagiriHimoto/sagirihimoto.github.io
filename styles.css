@@ -93,19 +93,10 @@ a {
 	min-height: 400px;
 	padding: 200px 10% 0 10%;
 }
-.BlogPostTitle {
-	font-size: 20px;
-	margin: 5px 0px 15px 0px;
-}
 
-.BlogPostTitle .TextFlavour {
+.ABlogTextTitle .TextFlavour {
 	--parent-flavourfontsize: 70%;
 	--parent-mainfill: #F00;
-	--parent-textfill: #fff;
-}
-.ABlogTextTitle .TextFlavour {
-	--parent-flavourfontsize: 80%;
-	--parent-mainfill: #47D182;
 	--parent-textfill: #fff;
 }
 .AuthorTextMuted .TextFlavour {
@@ -142,16 +133,15 @@ a {
 	padding: 15px 30px 20px 30px;
 }
 .ABlogText {
-	border-top: 1px solid #9fa1a3;
 	padding-top: 10px;
 }
 
 .ABlogTextTitle {
 	position: relative;
 	display: inline-block;
-	margin: 10px 0px 6px 0px;
+	margin: 5px 0px 15px 0px;
 	padding-bottom: 3px;
-	font-size: 19px;
+	font-size: 20px;
 	font-weight: bolder;
 	border-bottom: 1px solid #9fa1a3;
 	width: 100%;
