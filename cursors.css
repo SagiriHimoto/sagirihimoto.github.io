@@ -1,0 +1,23 @@
+.loadingcursor{
+  cursor: url(assets/ponytowncursorani/frame1.png), auto;
+  -webkit-animation: cursor 300ms infinite;
+  animation: cursor 300ms infinite;
+}
+
+@-webkit-keyframes cursor {
+  0% {cursor: url(assets/ponytowncursorani/frame1.png), auto;}
+  20% {cursor: url(assets/ponytowncursorani/frame2.png), auto;}
+  40% {cursor: url(assets/ponytowncursorani/frame3.png), auto;}
+  60% {cursor: url(assets/ponytowncursorani/frame4.png), auto;}
+  80% {cursor: url(assets/ponytowncursorani/frame5.png), auto;}
+  100% {cursor: url(assets/ponytowncursorani/frame6.png), auto;}
+} 
+
+@keyframes cursor {
+  0% {cursor: url(assets/ponytowncursorani/frame1.png), auto;}
+  20% {cursor: url(assets/ponytowncursorani/frame2.png), auto;}
+  40% {cursor: url(assets/ponytowncursorani/frame3.png), auto;}
+  60% {cursor: url(assets/ponytowncursorani/frame4.png), auto;}
+  80% {cursor: url(assets/ponytowncursorani/frame5.png), auto;}
+  100% {cursor: url(assets/ponytowncursorani/frame6.png), auto;}
+}

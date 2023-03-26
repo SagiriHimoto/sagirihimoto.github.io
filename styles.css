@@ -13,6 +13,38 @@
 
 /* Vars End */
 
+/* Buttons */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+.btn{
+
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background-color: #47d182;
+padding: 10px 25px;
+border: solid 2px #47D182;
+box-shadow: none;
+border-radius: 10px;
+transition : 352ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+margin-top:10px;
+}
+
+.btn:hover{
+
+transition : 352ms;
+transform : translateY(-0px);
+background-color: #91e8b5;
+color: #ffffff;
+border: solid 2px #47D182;
+}
+
 /* Animations */
 @-webkit-keyframes rotate-vert-center {
   0% {
@@ -171,10 +203,6 @@ a {
 	color: #000; /*#98F0A9*/
 	padding: 10px 0px 10px 10px;
 	margin: 10px 0px 10px 0px;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
 }
 .ABlogTextFiles {
 	border-radius: 5px;
@@ -345,34 +373,25 @@ img {
 	-webkit-user-select: none;
 	user-select: none;
 }
-.imgHalfPerc {
+.siteblock {
+	image-rendering: pixelated;
 	position: relative;
-	border: 5px inset #999;
+	border: 5px inset #666;
 	border-radius: 5px;
 	background-color: #999;
 	overflow: hidden; 
 	display: block;
+}
+.imgHalfPerc {
 	width: 50%;
 	height: auto;
 }
 .imgThirdPerc {
-	position: relative;
-	border: 5px inset #999;
-	border-radius: 5px;
-	background-color: #999;
-	overflow: hidden; 
-	display: block;
 	width: 30%;
 	height: auto;
 }
 .imgHunPerc {
-	position: relative;
-	border: 5px inset #999;
-	border-radius: 5px;
-	background-color: #999;
-	overflow: hidden; 
-	display: block;
-	width: 30%;
+	width: 100%;
 	height: auto;
 }
 .imgMarg10auto {
