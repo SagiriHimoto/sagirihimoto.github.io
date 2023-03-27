@@ -7,6 +7,7 @@
 	/* SagiriHimoto Info */
 	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
 	--SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
+	overflow-wrap: break-word;
 }
 ::-moz-selection {color: white;background: blue;}
 ::selection {color: white;background: blue;}
@@ -201,7 +202,7 @@ a {
 	border-radius: 5px;
 	background-color: #e6e6e6; /*#333*/
 	color: #000; /*#98F0A9*/
-	padding: 10px 0px 10px 10px;
+	padding: 10px;
 	margin: 10px 0px 10px 0px;
 }
 .ABlogTextFiles {
