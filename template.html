@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <link href="styles.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <title></title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+  var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+  console.log(template({ doesWhat: "rocks!" }));
+    </script>
 </head>
 <body>
     sus
