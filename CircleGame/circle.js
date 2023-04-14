@@ -3,8 +3,8 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 // Set the width and height of the canvas to match the window size
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = "6400";
+canvas.height = "4800";
 
 // Set the initial position and velocity of the circle
 let x = canvas.width / 2;

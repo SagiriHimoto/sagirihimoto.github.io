@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Circle Game</title>
+    <style>
+      canvas {
+        background-image: url('/textures/Map.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game-canvas"></canvas>
+    <script>
+      const canvas = document.getElementById('game-canvas');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+      const circleRadius = 10;
+      let circleX = width / 2;
+      let circleY = height / 2;
+      let cameraX = 0;
+      let cameraY = 0;
+
+      function render() {
+        // Move the camera to center on the circle
+        cameraX = circleX - width / 2;
+        cameraY = circleY - height / 2;
+
+        // Draw the background image
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(
+          canvas,
+          cameraX,
+          cameraY,
+          width,
+          height,
+          0,
+          0,
+          width,
+          height
+        );
+
+        // Draw the circle
+        ctx.beginPath();
+        ctx.arc(circleX - cameraX, circleY - cameraY, circleRadius, 0, Math.PI * 2);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        requestAnimationFrame(render);
+      }
+      render();
+
+      // Move the circle with arrow keys or WASD
+      const arrowKeys = { ArrowUp: 1, ArrowDown: 1, ArrowLeft: 1, ArrowRight: 1 };
+      const wsadKeys = { KeyW: 1, KeyS: 1, KeyA: 1, KeyD: 1 };
+      const keysPressed = {};
+      document.addEventListener('keydown', (event) => {
+        if (arrowKeys[event.code] || wsadKeys[event.code]) {
+          event.preventDefault();
+          keysPressed[event.code] = true;
+        }
+      });
+      document.addEventListener('keyup', (event) => {
+        if (arrowKeys[event.code] || wsadKeys[event.code]) {
+          event.preventDefault();
+          delete keysPressed[event.code];
+        }
+      });
+      function moveCircle() {
+        if (keysPressed.ArrowUp || keysPressed.KeyW) {
+          circleY = Math.max(circleY - 5, circleRadius);
+        }
+        if (keysPressed.ArrowDown || keysPressed.KeyS) {
+          circleY = Math.min(circleY + 5, height - circleRadius);
+        }
+        if (keysPressed.ArrowLeft || keysPressed.KeyA) {
+          circleX = Math.max(circleX - 5, circleRadius);
+        }
+        if (keysPressed.ArrowRight || keysPressed.KeyD) {
+          circleX = Math.min(circleX + 5, width - circleRadius);
+        }
+        setTimeout(moveCircle, 10);
+      }
+      moveCircle();
+    </script>
+  </body>
+</html>

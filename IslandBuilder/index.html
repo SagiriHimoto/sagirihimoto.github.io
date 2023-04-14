@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Selector</title>
+	<style>
+		#canvas {
+			width: 1200px;
+			height: 1600px;
+			border: 1px solid black;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<h1>Image Selector</h1>
+	<p>Select an image from the menu below and click on the canvas to place it at the current cursor position.</p>
+	<select id="image-select">
+		<option value="">Select an image...</option>
+		<option value="./textures/grass1.png">Image 1</option>
+		<option value="./textures/grass2.png">Image 2</option>
+		<option value="./textures/grass3.png">Image 3</option>
+	</select>
+	<div id="canvas"></div>
+
+	<script>
+		var canvas = document.getElementById('canvas');
+		var img = null;
+
+		canvas.addEventListener('click', function(event) {
+		    if (img) {
+		        var rect = canvas.getBoundingClientRect();
+		        var x = event.clientX - rect.left;
+		        var y = event.clientY - rect.top;
+
+		        img.style.left = x + 'px';
+		        img.style.top = y + 'px';
+		    }
+		});
+
+		document.getElementById('image-select').addEventListener('change', function() {
+		    var selectedImage = this.value;
+
+		    if (selectedImage) {
+		        img = document.createElement('img');
+		        img.src = selectedImage;
+		        img.style.width = '100%';
+		        img.style.position = 'absolute';
+		        canvas.appendChild(img);
+
+		        window.addEventListener('scroll', function() {
+		            var rect = canvas.getBoundingClientRect();
+		            var scrollX = window.scrollX || window.pageXOffset;
+		            var scrollY = window.scrollY || window.pageYOffset;
+
+		            img.style.left = (rect.left + scrollX) + 'px';
+		            img.style.top = (rect.top + scrollY) + 'px';
+		        });
+		    } else {
+		        canvas.innerHTML = '';
+		    }
+		});
+	</script>
+</body>
+</html>
