@@ -14,8 +14,17 @@ let vy = 0;
 const speed = 200; // pixels per second
 const radius = 30;
 
-// Track the last time the circle was updated
-let lastTime = performance.now();
+// Track the pressed keys
+const keys = {
+  ArrowUp: false,
+  ArrowDown: false,
+  ArrowLeft: false,
+  ArrowRight: false,
+  KeyW: false,
+  KeyS: false,
+  KeyA: false,
+  KeyD: false,
+};
 
 // Draw the circle at the current position
 function drawCircle() {
@@ -29,33 +38,15 @@ function drawCircle() {
 
 // Update the velocity of the circle based on the pressed keys
 document.addEventListener("keydown", (event) => {
-  if (event.code === "ArrowUp" || event.code === "KeyW") {
-    vy = -1;
-  } else if (event.code === "ArrowDown" || event.code === "KeyS") {
-    vy = 1;
-  } else if (event.code === "ArrowLeft" || event.code === "KeyA") {
-    vx = -1;
-  } else if (event.code === "ArrowRight" || event.code === "KeyD") {
-    vx = 1;
+  if (event.code in keys) {
+    keys[event.code] = true;
   }
 });
 
 // Stop the circle when the key is released
 document.addEventListener("keyup", (event) => {
-  if (
-    event.code === "ArrowUp" ||
-    event.code === "KeyW" ||
-    event.code === "ArrowDown" ||
-    event.code === "KeyS"
-  ) {
-    vy = 0;
-  } else if (
-    event.code === "ArrowLeft" ||
-    event.code === "KeyA" ||
-    event.code === "ArrowRight" ||
-    event.code === "KeyD"
-  ) {
-    vx = 0;
+  if (event.code in keys) {
+    keys[event.code] = false;
   }
 });
 
@@ -67,12 +58,33 @@ function update() {
   lastTime = currentTime;
 
   // Calculate the distance the circle should move based on the elapsed time
-  const distanceX = vx * speed * deltaTime / 1000;
-  const distanceY = vy * speed * deltaTime / 1000;
+  let dx = 0;
+  let dy = 0;
+  if (keys.ArrowUp || keys.KeyW) {
+    dy -= 1;
+  }
+  if (keys.ArrowDown || keys.KeyS) {
+    dy += 1;
+  }
+  if (keys.ArrowLeft || keys.KeyA) {
+    dx -= 1;
+  }
+  if (keys.ArrowRight || keys.KeyD) {
+    dx += 1;
+  }
+  if (dx !== 0 || dy !== 0) {
+    const distance = speed * deltaTime / 1000;
+    const angle = Math.atan2(dy, dx);
+    vx = distance * Math.cos(angle);
+    vy = distance * Math.sin(angle);
+  } else {
+    vx = 0;
+    vy = 0;
+  }
 
   // Update the position of the circle
-  x += distanceX;
-  y += distanceY;
+  x += vx;
+  y += vy;
 
   // Make sure the circle stays within the canvas bounds
   if (x - radius < 0) {
@@ -94,8 +106,12 @@ function update() {
   requestAnimationFrame(update);
 }
 
+// Track the last time the circle was updated
+let lastTime = performance.now();
+
 // Start the update loop
 requestAnimationFrame(update);
+
 canvas.style.overflow = "hidden";
 document.body.style.overflow = "hidden";
 });
