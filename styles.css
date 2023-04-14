@@ -1,24 +1,26 @@
 /* Vars Start */
 :root {
-	/* Defaults */
-	--parent-mainfill: #47D182;
-	--parent-textfill: #C3F8CD;
-	--headtitlecol: #ddbb74;
-	--linkcol: #D88856;
-	--linkhovcol: #e6b494;
-	--textcol: #ffffff;
-	--backgcol: #333333;
-	--boxcol: #212121;
-	--hrcol: #555;
-	--disbledform: #848484;
-	--buttoncol: #449d44;
-	--textmuted: #9c9c9c;
-	--textred: #d9534f;
-	--parent-flavourfontsize: 85%;
-	/* SagiriHimoto Info */
-	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
-	--SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
-	overflow-wrap: break-word;
+    /* Defaults */
+    --parent-mainfill: #47D182;
+    --parent-textfill: #C3F8CD;
+    --headtitlecol: #ddbb74;
+    --linkcol: #D88856;
+    --linkhovcol: #e6b494;
+    --textcol: #ffffff;
+    --backgcol: #333333;
+    --boxcol: #212121;
+    --hrcol: #555;
+    --disbledform: #848484;
+    --buttoncol: #449d44;
+    --textmuted: #9c9c9c;
+    --textred: #d9534f;
+    --parent-flavourfontsize: 85%;
+    /* SagiriHimoto Info */
+    --SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
+    --SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
+    overflow-wrap: break-word;
+    opacity: 0;
+    transition: opacity 5s;
 }
 ::-moz-selection {color: white;background: blue;}
 ::selection {color: white;background: blue;}
@@ -41,33 +43,6 @@
 	border-radius: 0.25rem;
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	margin:10px;
-}
-
-.btn{
-font-family: Roboto, sans-serif;
-font-size: 14px;
-color: #fff;
-background-color: #47d182;
-padding: 10px 25px;
-border: solid 2px #47D182;
-box-shadow: none;
-border-radius: 10px;
-transition : 352ms;
-transform: translateY(0);
-display: flex;
-flex-direction: row;
-align-items: center;
-cursor: pointer;
-margin-top:10px;
-}
-
-.btn:hover{
-
-transition : 352ms;
-transform : translateY(-0px);
-background-color: #91e8b5;
-color: #ffffff;
-border: solid 2px #47D182;
 }
 
 /* Animations */
@@ -96,14 +71,15 @@ border: solid 2px #47D182;
 html {
 }
 body {
-	background-color: #333;
-	font-family: Consolas;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	letter-spacing: -0.5px;
-	margin:0;
-	padding:0;
+    background-color: #333;
+    font-family: Consolas;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.5px;
+    margin: 0;
+    padding: 0;
 }
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -115,7 +91,6 @@ a {
 	height: 50px;
 	width: 100%;
 	color: var(--textcol);
-	bottom: 5px;
 }
 .BlogPostMain {
 	min-height: 400px;
@@ -183,8 +158,8 @@ a {
 
 .ABlogTextQuotes {
 	border-radius: 5px;
-	background-color: var(--backgcol)
-	color: var(--parent-textfill)
+	background-color: var(--backgcol);
+	color: var(--parent-textfill);
 	padding: 10px;
 	margin: 10px 0px 10px 0px;
 }
@@ -301,7 +276,7 @@ audio::-webkit-media-controls-enclosure {
 	cursor: pointer;
 }
 .audioembed button i {
-	vertical-align: center;
+	vertical-align: middle;
 }
 .ghembed {
 	margin: 10px 0px -5px 0px;
@@ -320,7 +295,7 @@ audio::-webkit-media-controls-enclosure {
 	height:350px;
 	border: 0px solid;
 }
-.googdocembed iframe:nth-child {
+.googdocembed iframe:nth-child(n) {
 	margin: auto;
 }
 /* ------ */
@@ -336,7 +311,7 @@ img {
 .siteblock {
 	image-rendering: pixelated;
 	position: relative;
-	border: 5px inset #666;
+	border: 5px #666;
 	border-radius: 5px;
 	background-color: #999;
 	overflow: hidden; 
@@ -381,8 +356,8 @@ img {
 }
 .imglogo44 {
 	vertical-align: middle;
-	height: 44px;
-	width: 44px;
+	height: 64px;
+	width: 64px;
 	pointer-events: none;
 	margin-left: 10px;
 }
@@ -422,3 +397,14 @@ img {
 /*-----------------------------*/
 /*---------Tooltips-End--------*/
 /*-----------------------------*/
+
+/*-----------------------------*/
+/*---------MOBILE---CSS--------*/
+/*-----------------------------*/
+
+@media only screen and (max-width: 800px) {
+	.BlogPostMain {
+		min-height: 400px;
+		padding: 100px 20px 0 20px;
+	}
+}

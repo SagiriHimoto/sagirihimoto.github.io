@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\styles"
   ],
-  "SelectedNode": "\\Handlebars.js",
+  "SelectedNode": "\\styles\\btn.css",
   "PreviewInSolutionExplorer": false
 }
