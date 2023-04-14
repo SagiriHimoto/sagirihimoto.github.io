@@ -1,3 +1,5 @@
+/*DEFAULT*/
+
 .btn {
     font-family: Roboto, sans-serif;
     font-size: 14px;
@@ -8,11 +10,12 @@
     box-shadow: none;
     border-radius: 10px;
     transition: 352ms;
+    transform: translateY(0);
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 10px;
 }
 
     .btn:hover {
@@ -20,6 +23,8 @@
         background-color: #91e8b5;
         border: solid 2px #47d182;
     }
+
+/*TWITTER*/
 
 .btntwitt {
     font-family: Roboto, sans-serif;
@@ -30,27 +35,12 @@
     border: solid 2px transparent;
     box-shadow: none;
     border-radius: 10px;
-    transition: 352ms;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .btntwitt:hover {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    color: #fff;
     background-color: #657786;
-    padding: 10px 25px;
     border: solid 2px #1da1f2;
-    box-shadow: none;
-    border-radius: 10px;
     transition: 352ms;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-    margin-top: 10px;
 }
