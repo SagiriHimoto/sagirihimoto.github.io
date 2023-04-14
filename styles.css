@@ -3,6 +3,17 @@
 	/* Defaults */
 	--parent-mainfill: #47D182;
 	--parent-textfill: #C3F8CD;
+	--headtitlecol: #ddbb74;
+	--linkcol: #D88856;
+	--linkhovcol: #e6b494;
+	--textcol: #ffffff;
+	--backgcol: #333333;
+	--boxcol: #212121;
+	--hrcol: #555;
+	--disbledform: #848484;
+	--buttoncol: #449d44;
+	--textmuted: #9c9c9c;
+	--textred: #d9534f;
 	--parent-flavourfontsize: 85%;
 	/* SagiriHimoto Info */
 	--SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
@@ -17,10 +28,23 @@
 /* Buttons */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
 
-.btn{
+.ptform {
+	display: block;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #ddd;
+	background-color: #222;
+	background-clip: padding-box;
+	border: 1px solid #555;
+	border-radius: 0.25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	margin:10px;
+}
 
+.btn{
 font-family: Roboto, sans-serif;
-font-weight: 0;
 font-size: 14px;
 color: #fff;
 background-color: #47d182;
@@ -86,56 +110,18 @@ a {
 	cursor: pointer;
 }
 
-@font-face {
-	font-family: "C64 Pro Mono Local";src:url(fonts/C64_Pro_Mono-STYLE.woff2) format("woff2");
-}
-.fa-solid {
-	-moz-osx-font-smoothing:grayscale;
-	-webkit-font-smoothing:antialiased;
-	font-style:normal;
-	font-variant:normal;
-	text-rendering:auto;
-	font-family: "Font Awesome 6 Free";
-    font-weight: 99;
-}
-.fa-brands {
-	-moz-osx-font-smoothing:grayscale;
-	-webkit-font-smoothing:antialiased;
-	font-style:normal;
-	font-variant:normal;
-	text-rendering:auto;
-	font-family: "Font Awesome 6 Brands";
-    font-weight: 99;
-}
-.fa-animated-tilt:hover {
-	-webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-
 /* Blog Post Parts */
 .FooterPart {
-	background-color: #fff;
-	border-top: 1px solid #9fa1a3;
-	height: 120px;
+	height: 50px;
 	width: 100%;
-	float: center;
-	box-shadow: 0 0 10px rgb(0 0 0 / 80%);
-	color: black;
+	color: var(--textcol);
+	bottom: 5px;
 }
 .BlogPostMain {
 	min-height: 400px;
-	padding: 200px 10% 0 10%;
+	padding: 150px 10% 0 10%;
 }
 
-.ABlogTextTitle .TextFlavour {
-	--parent-flavourfontsize: 70%;
-	--parent-mainfill: #F00;
-	--parent-textfill: #fff;
-}
-.AuthorTextMuted .TextFlavour {
-	--parent-mainfill: #d2d2d2;
-	--parent-textfill: #000;
-}
 .TextFlavour {
 	position: relative;
 	display: inline-block;
@@ -151,18 +137,13 @@ a {
 	-ms-user-select: none;
 	user-select: none;
 }
-.TextFlavour i {
-	vertical-align: -0.5px;
-}
 .BlogText {
-	background-color: #fff;
-	border: 1px solid #9fa1a3;
+	background-color: var(--boxcol);
+	color: var(--textcol);
 	min-height: 400px;
 	max-width: 100%;
 	border-radius: 5px;
-	float: center;
 	margin-bottom: 5%; /* idk why but margin-bottom propert didn't work for "BlogPostMain", but it worked here */
-	box-shadow: 0 0 10px rgb(0 0 0 / 80%);
 	padding: 15px 30px 20px 30px;
 }
 .ABlogText {
@@ -176,8 +157,9 @@ a {
 	padding-bottom: 3px;
 	font-size: 20px;
 	font-weight: bolder;
-	border-bottom: 1px solid #9fa1a3;
+	border-bottom: 1px solid var(--headtitlecol);
 	width: 100%;
+	color: var(--headtitlecol);
 }
 
 .ABlogTextTitleSmall {
@@ -187,8 +169,9 @@ a {
 	padding-bottom: 3px;
 	font-size: 17px;
 	font-weight: bold;
-	border-bottom: 1px solid #9fa1a3;
+	border-bottom: 1px solid var(--headtitlecol);
 	width: 100%;
+	color: var(--headtitlecol);
 }
 
 .ABlogTextItalics {
@@ -200,8 +183,8 @@ a {
 
 .ABlogTextQuotes {
 	border-radius: 5px;
-	background-color: #e6e6e6; /*#333*/
-	color: #000; /*#98F0A9*/
+	background-color: var(--backgcol)
+	color: var(--parent-textfill)
 	padding: 10px;
 	margin: 10px 0px 10px 0px;
 }
@@ -248,30 +231,6 @@ a {
 .file-name {
 }
 /* Embeds */
-/* .VideoFrame {
-	position: relative;
-	border: 5px inset #999;
-	border-radius: 5px;
-	background-color: #000;
-	overflow: hidden; 
-	display: block;
-	margin: 10px auto;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-	height: 0;
-	overflow: hidden;
-} */
-/* .VideoFrameV {
-	position: relative;
-	border: 5px inset #999;
-	border-radius: 5px;
-	background-color: #000;
-	overflow: hidden; 
-	display: block;
-	margin: 10px auto;
-	padding-bottom: 55.75%;
-	padding-top: 0px;
-} */
 .VideoFrame {
 	position: relative;
 	border: 5px inset #999;
@@ -408,7 +367,7 @@ img {
 /* ----ImageEND--- */
 /* --------------- */
 .AuthorTextMuted {
-	color: rgb(120, 124, 126);
+	color: var(--textmuted);
 	font-size: 12px;
 }
 /*-----------------------------*/
@@ -425,109 +384,39 @@ img {
 	height: 44px;
 	width: 44px;
 	pointer-events: none;
-}
-/* Change the color of links on hover */
-.navigationbar  a.inactive:hover {
-}
-.navigationbar  a.active:hover {
-}
-
-/* Add a color to the active/current link */
-.navigationbar  a.active {
+	margin-left: 10px;
 }
 .navigationbar {
-	background-color: #FFF;
-	height: 57px;
-	position: fixed;
+	height: 55px;
+	/*position: fixed;*/
 	width: 100%;
-	border-bottom: 1px solid #9fa1a3;
-	margin: 0px;
 	z-index: 999;
-	box-shadow: 0 0 10px rgb(0 0 0 / 80%);
-	transition: height 0.5s ease-in-out 0s;
-}
-/* Style the links inside the navigation bar */
-.navigationbar a.inactive {
-	float: right;
-	text-align: center;
-	font-size: 19px;
-	padding: 14px 1%;
-	text-decoration: none;
-	margin-top: 4px;
-	font-weight: bold;
-	color: transparent;
-	background: #006152;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	background-clip: text;
-	text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
-	word-spacing: -5px;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	transition: padding-top 0.5s ease-in-out 0s;
-}
-.navigationbar a i {
-	vertical-align: -0.5px;
-}
-
-.navigationbar div.titlish {
-	float: left;
-	margin: 9px 16px 0px 16px;
+	margin-top: 10px;
 	text-decoration: none;
 	font-size: 34px;
 	font-weight: bold;
-	color: transparent;
-	background: #006152;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	background-clip: text;
-	text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
-	transition: margin-top 0.5s ease-in-out 0s;
-	word-spacing: -10px;
+	color: var(--parent-textfill);
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 }
 /*-----------------------------*/
-/*-------Progress-bar----------*/
-/*-----------------------------*/
-/* The progress container (grey background) */
-.progress-container {
-	width: 100%;
-	height: 0%;
-	background: #ccc;
-	transition: height 0.5s ease-in-out 0s;
-	box-shadow: 0 0 3px rgb(0 0 0 / 80%);
-}
-
-/* The progress bar (scroll indicator) */
-.progress-bar {
-	height: 0%;
-	background: #47d182;
-	width: 0%;
-	transition: width 0.5s ease-in-out 0s;
-	transition: height 0.5s ease-in-out 0s;
-}
-/*-----------------------------*/
-/*-------Progress-bar-End------*/
-/*-----------------------------*/
-/*-----------------------------*/
 /*----------Nav-bar-End--------*/
 /*-----------------------------*/
+
 /*-----------------------------*/
 /*---------Tooltips------------*/
 /*-----------------------------*/
 .tooltipable {
 	position: relative;
 	display: inline-block;
-	color: #006152;
-/*	border-bottom: 2px dotted black; */
+	color: var(--parent-textfill);
+	border-bottom: 2px dotted var(--parent-textfill);
 }
 
 .tooltipable:hover {
 	transition: 0.5s;
-	color: #91C99C;
+	color: var(--parent-mainfill);
 }
 
 /*-----------------------------*/
