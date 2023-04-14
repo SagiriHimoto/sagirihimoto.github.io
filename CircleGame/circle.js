@@ -2,48 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-// Define the size of the tiles and the number of rows and columns in the map
-const tileSize = {
-  width: 32,
-  height: 24,
-};
-const numRows = 3;
-const numCols = 4;
-
-// Define the textures for each tile ID
-const textures = [
-  null, // ID 0 has no texture
-  document.getElementById("texture1"),
-  document.getElementById("texture2"),
-  document.getElementById("texture3"),
-];
-
-// Load the map file and parse its contents into a 2D array
-fetch("map.txt")
-  .then(response => response.text())
-  .then(data => {
-    const lines = data.trim().split("\n");
-    const map = [];
-    for (let i = 0; i < numRows; i++) {
-      map.push(lines[i + 1].trim().split(" ").map(Number));
-    }
-
-    // Draw the map on the canvas
-    for (let row = 0; row < numRows; row++) {
-      for (let col = 0; col < numCols; col++) {
-        const tileID = map[row][col];
-        const texture = textures[tileID];
-
-        if (texture) {
-          ctx.drawImage(texture, col * tileSize.width, row * tileSize.height, tileSize.width, tileSize.height);
-        }
-      }
-    }
-  })
-  .catch(error => {
-    console.error(`Error loading map: ${error}`);
-  });
-
 // Set the width and height of the canvas to match the window size
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
