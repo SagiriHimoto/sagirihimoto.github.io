@@ -458,7 +458,7 @@ img {
 /*---------MOBILE---CSS--------*/
 /*-----------------------------*/
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
 	.BlogPostMain {
 		min-height: 400px;
 		padding: 100px 10px 0 10px;
