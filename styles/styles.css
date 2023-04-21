@@ -1,4 +1,4 @@
-/* Vars Start */
+﻿/* Vars Start */
 :root {
     /* Defaults */
     --parent-mainfill: #47D182;
@@ -15,21 +15,19 @@
     --textmuted: #9c9c9c;
     --textred: #d9534f;
     --parent-flavourfontsize: 85%;
+	overflow-wrap: break-word;
     /* SagiriHimoto Info */
     --SagiriHimotoAvatar: url('https://i.ibb.co/VpyYf1q/12-2.png');
     --SagiriHimotoBanner: url('https://i.ibb.co/68bJjjG/cover2-twitt.png');
-    overflow-wrap: break-word;
 }
 ::-moz-selection {color: white;background: blue;}
 ::selection {color: white;background: blue;}
 
 /* Vars End */
-
-/* Buttons */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
 
 .ptform {
-	display: block;
+	display: inline-block;
 	padding: 0.375rem 0.75rem;
 	font-size: 1rem;
 	font-weight: 400;
@@ -41,6 +39,80 @@
 	border-radius: 0.25rem;
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	margin:10px;
+    height: 25px;
+    flex: 1 0 21%;
+}
+
+.ptformcolor {
+    background-color: var(--ParentBoxFill);
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right:10px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #555;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.lockptform {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+    width: 27px;
+    height: 27px;
+	color: #ddd;
+	background-color: #222;
+	background-clip: padding-box;
+	border: 1px solid #555;
+	border-radius: 0.25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	margin:10px;
+    vertical-align: top;
+    padding: 5px;
+}
+
+.lockptform svg {
+    width: 25px;
+    height: 25px;
+}
+
+.lockptform.disabled svg {
+    color: transparent;
+}
+
+.lockptform:nth-child(3) {
+    margin-left:30px;
+}
+
+.copyableptform {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ddd;
+    background-color: #222;
+    background-clip: padding-box;
+    border: 1px solid #555;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin: 10px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: left;
+    height: 25px;
+    flex: 1 0 21%;
+    min-width: 140px;
+}
+
+.copyableptform:active {
+    border-color: #83bfff !important;
+    box-shadow: 0 0 0 0.2rem rgba(80,165,255,.3) !important;
 }
 
 .skindisplay {
@@ -50,6 +122,7 @@
     width: 400px;
     border: 1px solid transparent;
     border-radius: 8px;
+    image-rendering: pixelated;
 }
 
 /* Animations */
@@ -127,7 +200,7 @@ a {
 	min-height: 400px;
 	max-width: 100%;
 	border-radius: 5px;
-	margin-bottom: 5%; /* idk why but margin-bottom propert didn't work for "BlogPostMain", but it worked here */
+	margin-bottom: 5%;
 	padding: 15px 30px 20px 30px;
 }
 .ABlogText {
