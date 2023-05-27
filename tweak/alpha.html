@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <meta content="A simple color picker application written in pure JavaScript, for modern browsers." name="description">
+    <title>Color Picker</title>
+    <link href="../index.min.css" rel="stylesheet">
+    <style>
+      .color-picker__dialog--no-alpha .color-picker__control--a {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Disable alpha channel support with CSS.</p>
+      <p><input type="text" value="#ff0"></p>
+    </main>
+    <script src="../index.min.js"></script>
+    <script>
+      function disableAlphaControl(picker) {
+          if (picker.noAlpha) {
+              return;
+          }
+          picker.noAlpha = true;
+          picker.self.classList.add(picker.state.class + '__dialog--no-alpha');
+          picker.on('change', function (r, g, b) {
+              this.source.value = this.color(r, g, b, 1);
+          });
+      }
+      const picker = new CP(document.querySelector('input'));
+      disableAlphaControl(picker);
+    </script>
+  </body>
+</html>

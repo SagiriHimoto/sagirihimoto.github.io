@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <meta content="A simple color picker application written in pure JavaScript, for modern browsers." name="description">
+    <title>Color Picker</title>
+    <link href="../index.min.css" rel="stylesheet">
+    <style>
+      .color-picker__dialog--static {
+        box-shadow: none;
+        display: inline-block;
+        left: 0 !important;
+        position: static;
+        top: 0 !important;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p><input type="text"></p>
+      <p></p>
+      <p>Simple <em>hack</em> to make a static color picker panel.</p>
+    </main>
+    <script src="../index.min.js"></script>
+    <script>
+      function enableStaticColorPicker(picker, container) {
+          if (picker.isStatic) {
+              return;
+          }
+          picker.isStatic = true;
+          // Disable default blur and focus behavior
+          picker.on('blur', () => {});
+          picker.on('focus', () => {});
+          picker.on('change', function (r, g, b, a) {
+              this.source.value = this.color(r, g, b, a);
+          });
+          // Add a `is-static` class to the color picker panel
+          picker.self.classList.add(picker.state.class + '__dialog--static');
+          // Put color picker panel to `container`
+          picker.enter(container);
+      }
+      const picker = new CP(document.querySelector('input'));
+      enableStaticColorPicker(picker, document.querySelectorAll('p')[1]);
+    </script>
+  </body>
+</html>
