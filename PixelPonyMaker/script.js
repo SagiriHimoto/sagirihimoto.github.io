@@ -44,7 +44,7 @@
 	        };
 			
 	        charCtx.filter = 'hue-rotate(' + this.eyes + 'deg) brightness(1)  ';
-	        charCtx.drawImage(myImage2, 0+48, 0, 48, 48, 0, 0, 48, 48);
+	        charCtx.drawImage(myImage2, 128, 0, 128, 128, 0, 0, 128, 128);
 			
 			
 	        charCtx.filter = 'hue-rotate(' + this.hair[0] + 'deg) brightness(' + Number(1 - (this.hair[0] / 1000)) + ')  ';
