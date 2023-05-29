@@ -1,0 +1,134 @@
+body{
+		letter-spacing: 1px;
+		text-decoration: none;
+	}
+	
+	button{background-color: transparent;
+		display: inline-block;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 8px 16px;
+  margin: 0 2px;
+  border: 1px solid #fff;
+  letter-spacing: 1px;
+		 border-image: linear-gradient(
+    to right,
+    #fff 15%,
+    rgba(0,0,0,0) 30%,
+    rgba(0,0,0,0) 70%,
+    #fff 85%
+  ) 1;
+  transition: all .2s;
+		margin-top: 20px;
+	}
+	
+	button:hover{background-color: gray;
+		display: inline-block;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 8px 16px;
+  margin: 0 2px;
+  border: 1px solid #fff;
+  letter-spacing: 1px;
+		 border-image: linear-gradient(
+    to right,
+    #fff 15%,
+    rgba(0,0,0,0) 30%,
+    rgba(0,0,0,0) 70%,
+    #fff 85%
+  ) 1;
+  transition: all .5s;
+		margin-top: 20px;
+	}
+	
+	
+	
+	.grid-container {
+		text-decoration: none;
+		color: black;
+  border: 1px solid #fff;
+		
+		
+		
+		border-radius: 30px;
+  display: grid;
+  grid-template-columns: auto auto;
+   background-image: linear-gradient(#59C173,#a17fe0,#5D26C1);
+		background: linear-gradient(276deg, #ad5389, #3c1053);
+		/*background-image: url(vaporwave-tarik-radoncic.jpg);*/
+		
+  padding: 10px;
+}
+.grid-item {
+	border-radius: 15px 0px 0px 15px;
+  background-image: linear-gradient(#0F2027,#203A43,#2C5364);
+/*	background-image: url(concrete-wall.png);
+	background-color: rgba(53,53,53,1.00);*/
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+	.grid-item1 {
+		border-radius: 0px 15px 15px 0px;
+
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+		
+		background: linear-gradient(276deg, #ad5389, #3c1053);
+background-size: 101%;
+/* 		background-image: url(vaporwave-tarik-radoncic.jpg); */
+
+-webkit-animation: AnimationName 30s ease infinite;
+-moz-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite;
+}
+	
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+	
+/* img{
+  	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+		transform: translatey(0px);
+	}
+}
+ */
+
+img:hover{
+  transform:scale(1.5);
+  transition:0.1s;
+}
+	
+	
+	.lol{
+		background-color: black;
+		image-rendering: pixelated;
+	}
