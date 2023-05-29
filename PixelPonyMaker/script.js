@@ -1,7 +1,7 @@
 //sancho panza	
 
 		//body
-	var myImage = document.getElementById("myImg");
+	var myImage = document.getElementById("bodyTexture");
 	//eyes
 	var myImage2 = document.getElementById("myImg2");
 	//hair
@@ -13,9 +13,10 @@
 	
     var backSize = document.getElementById("gd1");
     var screen = document.getElementById("charScreen");
-	screen.width = 50;
-	screen.height = 50;
+	screen.width = 128;
+	screen.height = 128;
 	var charCtx = screen.getContext("2d");
+	
      function NewChar(x1,x2,x3,x4,x5) {
 		if(x1==undefined){
 			x1="male";
@@ -35,7 +36,7 @@
 	        charCtx.clearRect(0, 0, 48, 48);
 			charCtx.filter = 'hue-rotate(' + this.race + 'deg) brightness(' + this.ethnicity + ')  ';
 			if (this.gender == "male") {
-	            charCtx.drawImage(myImage, 48, 0, 48, 48, 0, 0, 48, 48);
+	            charCtx.drawImage(myImage, 0, 0, 128, 128, 0, 0, 128, 128);
 	        } else if (this.gender == "female") {
 	            charCtx.drawImage(myImage, 192, 0, 48, 48, 0, 0, 48, 48);
 	        } else {
@@ -51,62 +52,21 @@
 		};
 			   
 	    this.drawMyChar();
-	    this.giveBirth = () => {
-			var personality = [];
-				if(document.getElementById("autoEquip").checked){	
-			var randNumber = Math.floor((Math.random() * 10) + 1);
-			var randNumber2 = Math.floor((Math.random() * 360) + 1);
-			var randNumber3 = (Math.floor((Math.random() * 10) + 1))-1;
-					
-			//console.log(randNumber3);
-			var armor = [0,192,288]
-						
-			charCtx.filter = 'hue-rotate('+ randNumber2 +'deg) brightness('+ Number(1 - (randNumber2/1000)) +')  ';
-			if(randNumber3 == 0 && this.gender == "female"){
-				console.log("bad look");
-			}else{
-			charCtx.drawImage(myImage5,armor[randNumber3], 0, 48, 48, 0, 1, 48, 48);	
-			};
-					
-			if(randNumber3 == 1){
-			personality.push("Templar");	
-			} else
-			if(randNumber3 == 0){
-			personality.push("Enforcer");	
-			} else
-			if(randNumber3 == 2){
-			personality.push("Knight");	
-			}
 
-			if(randNumber3 == 1)randNumber3 = (Math.floor((Math.random() * 4) + 1))-1;
-			if(randNumber3 != 1){
-				randNumber = Math.floor((Math.random() * 10) + 1);
-			 randNumber2 = Math.floor((Math.random() * 360) + 1);
-								
-				if(randNumber3 == 0 && this.gender == "female"){
-				console.log("bad look");
-			}else{
-				charCtx.filter = 'hue-rotate('+ randNumber2 +'deg) brightness('+ Number(1 - (randNumber2/1000)) +')  ';
-			charCtx.drawImage(myImage5,armor[randNumber3], 0, 48, 48, 0, 1, 48, 48);	
-			};	
-			}
-			 randNumber = Math.floor((Math.random() * 11) + 1)-1;
-			 randNumber2 = Math.floor((Math.random() * 360) + 1);
-				
-			charCtx.filter = 'hue-rotate('+ randNumber2 +'deg) brightness('+ Number(1 - (randNumber2/1000)) +')  ';
-			charCtx.drawImage(myImage4, randNumber*48, 0, 48, 48, 0, 3, 48, 48);
-		
-			 randNumber = Math.floor((Math.random() * 10) + 1);
-			 randNumber2 = Math.floor((Math.random() * 360) + 1);		
-			charCtx.filter = 'hue-rotate('+ randNumber2 +'deg) brightness('+ Number(1 - (randNumber2/1000)) +')  ';
-			charCtx.drawImage(myImage6, randNumber*48, 0, 48, 48, 0, 3, 48, 48);
-			}
-			console.log(personality);
-			var x = document.createElement("IMG");
-			x.src = screen.toDataURL('image/png');
-			x.style.width = "100px";
-	        document.getElementById("myChildren").appendChild(x);
- charCtx.clearRect(0, 0, 60, 60);char = new NewChar();
-	    }
 	}
 	var char = new NewChar();
+	
+function calculate_shader(color,percent){
+
+    var ctx = document.createElement('canvas').getContext('2d');
+
+    ctx.fillStyle = color;
+    ctx.fillRect(0,0,1,1);
+
+    var color = ctx.getImageData(0,0,1,1);
+    var r = color.data[0] - Math.floor( percent / 100 * 255 );
+    var g = color.data[1] - Math.floor( percent / 100 * 255 / 2);
+    var b = color.data[2] - Math.floor( percent / 100 * 255 );
+
+    return 'rgb('+r+','+g+','+b+')';
+}
