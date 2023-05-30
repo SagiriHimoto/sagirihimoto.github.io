@@ -2,6 +2,10 @@ body{
 		letter-spacing: 1px;
 		text-decoration: none;
 		background-color: #333;
+		max-width:320px;
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 50px;
 	}
 img:hover{
   transform:scale(1.5);
