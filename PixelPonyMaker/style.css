@@ -25,12 +25,14 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: linear-gradient(to right, red, orange, yellow, lime, green, turquoise,cyan,Blue,Violet,Magenta,Crimson,red);
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
+.rainbowslider::-webkit-slider-runnable-track{ background: linear-gradient(to right, red, orange, yellow, lime, green, turquoise,cyan,Blue,Violet,Magenta,Crimson,red);}
+.brightnessslider::-webkit-slider-runnable-track{ background: linear-gradient(to right, black,white);}
 input[type=range]::-webkit-slider-thumb {
   margin-top: -4px;
+  color:var(--EyesliderColor);
 }
 
 /* Style the tab */

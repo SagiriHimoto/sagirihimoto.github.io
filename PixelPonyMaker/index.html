@@ -63,19 +63,19 @@ ethnicity
 </div>
 
 <div id="Face" class="tabcontent">
-<button onClick="char.hair[1]-=1; if(char.hair[1] < 0)char.hair[1] = 3;char.drawMyChar()">&#8592;</button>
+<!--<button onClick="char.hair[1]-=1; if(char.hair[1] < 0)char.hair[1] = 3;char.drawMyChar()">&#8592;</button>
 hair style
 <input id="hairColor" type="range" value="0" max="360"  onChange="char.hair[0] = value;char.drawMyChar();
 
 backSize.style.backgroundSize = '300%';"><button onClick="char.hair[1]+=1; if(char.hair[1] > 3)char.hair[1] = 0;char.drawMyChar()" > &#8594;</button>
-<br>
+<br>-->
 <div style="margin: 15px; background: #212121; border: 1px solid #555; display: block; overflow: hidden; border-radius: 3px;"><div style="display:table;margin-bottom:-1px;">
-		<div class="charedititem eye" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.eyetype = 0;eyesinactive(0);char.drawMyChar()"></div>
+		<div class="charedititemactive charedititem eye" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.eyetype = 0;eyesinactive(0);char.drawMyChar()"></div>
 		<div class="charedititem eye" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.eyetype = 1;eyesinactive(1);char.drawMyChar()"></div>
 		</div></div>
-eye color
-<input id="eyeColor" type="range" value="0" max="360"  onChange="char.eyes = value;char.drawMyChar();
-backSize.style.backgroundSize = '1000%';">
+eye color<br/>
+<input id="eyeColor" type="range" class="rainbowslider" value="0" max="360" onChange="char.eyes = value;char.drawMyChar();">
+<input id="eyeBright" type="range" class="brightnessslider" value="1" max="1" step="0.1" onChange="char.eyesBright = value;char.drawMyChar();">
 </div>
 </div>	
 <img src="./assets/body.png"  style="display: none;" id="bodyTexture">
@@ -99,6 +99,3 @@ backSize.style.backgroundSize = '1000%';">
 <!-- partial -->
   <script  src="./script.js"></script>
   <script  src="./tabs.js"></script>
-
-</body>
-</html>

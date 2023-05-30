@@ -32,7 +32,7 @@ function maneinactive(SomeManeToActivate) {
 function eyesinactive(SomeEyeToActivate) {
   actualEyes = document.getElementsByClassName("eye");
   for (i = 0; i < actualEyes.length; i++) {
-    actualEyes[i].className = actualEyes[i].className.replace("charedititem eye charedititemactive", "charedititem eye");
+    actualEyes[i].className = actualEyes[i].className = "charedititem eye";
   }
-  actualEyes[SomeEyeToActivate].className = actualEyes[SomeEyeToActivate].className.replace("charedititem eye", "charedititem eye charedititemactive");
+  actualEyes[SomeEyeToActivate].className = actualEyes[SomeEyeToActivate].className = "charedititem eye charedititemactive";
 }
