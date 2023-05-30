@@ -3,7 +3,8 @@
 		//body
 	var myImage = document.getElementById("bodyTexture");
 	//eyes
-	var myImage2 = document.getElementById("myImg2");
+	var myImage2 = document.getElementById("EYEris");
+	var eyetypes = document.getElementById("EYEs");
 	//hair
 	var myImage3 = document.getElementById("myImg3");
 	//weapons and gear
@@ -17,21 +18,23 @@
 	screen.height = 128;
 	var charCtx = screen.getContext("2d");
 	
-     function NewChar(x1,x2,x3,x4,x5) {
+     function NewChar(x1,x2,x3,x4,x5,defaultEyes) {
 		if(x1==undefined){
 			x1="male";
 			x2=0;
 			x3=1;
 			x4=[ [0],[4],[48, 240, 336] ];
 			x5=0;
+			defaultEyes=0;
 		};
 		
 		
-	    this.gender = x1;
+	    this.gender = "male";
 	    this.race = x2;
 	    this.ethnicity = x3;
 	    this.hair = x4;
 	    this.eyes = x5;
+		this.eyetype = defaultEyes;
 		this.drawMyChar = () => {
 	        charCtx.clearRect(0, 0, 48, 48);
 			charCtx.filter = 'hue-rotate(' + this.race + 'deg) brightness(' + this.ethnicity + ')  ';
@@ -42,6 +45,13 @@
 	        } else {
 	            charCtx.drawImage(myImage, 336, 0, 48, 48, 0, 0, 48, 48);
 	        };
+			
+			charCtx.filter = 'none';
+			if (this.eyetype==0) {
+			charCtx.drawImage(eyetypes, 128, 0, 128, 128, 0, 0, 128, 128);
+			} else {
+			charCtx.drawImage(eyetypes, 0, 0, 128, 128, 0, 0, 128, 128);
+			};
 			
 	        charCtx.filter = 'hue-rotate(' + this.eyes + 'deg) brightness(1)  ';
 	        charCtx.drawImage(myImage2, 128, 0, 128, 128, 0, 0, 128, 128);
