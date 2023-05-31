@@ -2,7 +2,7 @@ body{
 		letter-spacing: 1px;
 		text-decoration: none;
 		background-color: #333;
-		max-width:320px;
+		max-width:calc(100% - 300px);
 		margin: auto;
 		margin-top: 30px;
 		margin-bottom: 50px;
@@ -16,7 +16,7 @@ img:hover{
 .charedititemactive{background-color:#ccc!important;}
 
 	.lol{
-		background-color: black;
+		background-color: transform;
 		image-rendering: pixelated;
 	}
 	
