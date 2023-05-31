@@ -11,6 +11,21 @@ img:hover{
   transform:scale(1.5);
   transition:0.1s;
 }
+@media only screen and (max-width: 600px) {
+  body {
+		letter-spacing: 1px;
+		text-decoration: none;
+		background-color: #333;
+		max-width:calc(100% - 10px);
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 50px;
+	}
+	canvas {
+		max-width:calc(100% - 10px);
+		height: auto;
+	}
+}
 
 .charedititem{background-color: #333; display:inline-block; border: 1px solid #555; border-left: 1px solid #555; border-top: 1px solid #555; padding:0px; width: 54px; background-repeat:no-repeat;background-size:contain;background-position:center;height:54px;background-image:var(--itembg);}
 .charedititemactive{background-color:#ccc!important;}
