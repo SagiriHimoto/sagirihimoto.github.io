@@ -11,8 +11,16 @@ img:hover{
   transform:scale(1.5);
   transition:0.1s;
 }
+.sublol{
+	width: 256px; height: 256px; margin:auto;
+	}
+	
+.chrscr {
+	width: 256px; height: 256px;background-color:transparent; border-radius: 10px;transition: 0.2s;
+}
 @media only screen and (max-width: 600px) {
-  body {
+
+	body {
 		letter-spacing: 1px;
 		text-decoration: none;
 		background-color: #333;
@@ -21,9 +29,13 @@ img:hover{
 		margin-top: 30px;
 		margin-bottom: 50px;
 	}
-	canvas {
-		max-width:calc(100% - 10px);
+	.sublol{
+	width: 100%; height: auto; margin:auto;
+	}
+	.chrscr {
+		width:calc(100% - 10px);
 		height: auto;
+		background-color: red;
 	}
 }
 
