@@ -74,8 +74,8 @@ backSize.style.backgroundSize = '300%';"><button onClick="char.hair[1]+=1; if(ch
 		<div class="charedititem eye" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.eyetype = 1;eyesinactive(1);char.drawMyChar()"></div>
 		</div></div>
 eye color<br/>
+<input id="eyeColor" type="range" class="rainbowslider" value="0" max="360" step="1" onChange="char.eyes = value;char.drawMyChar();">
 <input id="eyeBright" type="range" class="brightnessslider" value="1" max="1" step="0.1" onChange="char.eyesBright = value;char.drawMyChar();">
-<input id="eyeColor" type="range" class="rainbowslider" value="0" max="360" onChange="char.eyes = value;char.drawMyChar();">
 </div>
 </div>	
 <img src="./assets/body.png"  style="display: none;" id="bodyTexture">
