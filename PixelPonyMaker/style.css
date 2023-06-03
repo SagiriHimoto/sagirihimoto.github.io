@@ -12,11 +12,11 @@ img:hover{
   transition:0.1s;
 }
 .sublol{
-	width: 256px; height: 256px; margin:auto;
+	width: 384px; height: 384px; margin:auto;
 	}
 	
 .chrscr {
-	width: 256px; height: 256px;background-color:transparent; border-radius: 10px;transition: 0.2s;
+	width: 384px; height: 384px;background-color:transparent; border-radius: 10px;transition: 0.2s;
 }
 @media only screen and (max-width: 600px) {
 
@@ -39,7 +39,7 @@ img:hover{
 	}
 }
 
-.charedititem{background-color: #333; display:inline-block; border: 1px solid #555; border-left: 1px solid #555; border-top: 1px solid #555; padding:0px; width: 54px; background-repeat:no-repeat;background-size:contain;background-position:center;height:54px;background-image:var(--itembg);}
+.charedititem{background-color: #333; display:inline-block; border: 1px solid #555; border-left: 1px solid #555; border-top: 1px solid #555; padding:0px; width: 81px; background-repeat:no-repeat;background-size:81px;background-position:center;image-rendering:pixelated;height:81px;background-image:var(--itembg);}
 .charedititemactive{background-color:#ccc!important;}
 
 	.lol{
@@ -47,19 +47,43 @@ img:hover{
 		image-rendering: pixelated;
 	}
 	
+input:focus {
+  outline: none;
+}
+
+input[type=range i] {
+  margin-top: 0px;
+  -webkit-appearance: none;
+}
+
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 8.4px;
+  height: 27px;
   cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
+  border: 2px solid #010101;
 }
-.rainbowslider::-webkit-slider-runnable-track{ background: linear-gradient(to right, red, orange, yellow, lime, green, turquoise,cyan,Blue,Violet,Magenta,Crimson,red);}
-.brightnessslider::-webkit-slider-runnable-track{ background: linear-gradient(to right, black,white);}
+
 input[type=range]::-webkit-slider-thumb {
-  margin-top: -4px;
-  color:var(--EyesliderColor);
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 2px solid #000000;
+  height: 28px;
+  width: 5px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  top: -2px;
+  position: relative;
+}
+
+.rainbowslider::-webkit-slider-runnable-track{ background: linear-gradient(to right, red, orange, yellow, lime, turquoise,cyan,Blue,Violet,Magenta,Crimson,red);}
+.brightnessslider::-webkit-slider-runnable-track{ background: linear-gradient(to right, black,white);}
+.saturationslider::-webkit-slider-runnable-track{ background: linear-gradient(to right, gray,red);}
+
+.numberinput {
+	top: -9px;
+    position: relative;
+    height: 21px;
+    border: 2px solid #000;
 }
 
 /* Style the tab */

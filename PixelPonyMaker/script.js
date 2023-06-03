@@ -6,6 +6,7 @@
 	var myImage2 = document.getElementById("EYEris");
 	var eyetypes = document.getElementById("EYEs");
 	//hair
+		var fmanestyle = document.getElementById("maneTexture");
 	var myImage3 = document.getElementById("myImg3");
 	//weapons and gear
 	var myImage4 = document.getElementById("offWeapons");
@@ -26,6 +27,9 @@
 			x4=[ [0],[4],[48, 240, 336] ];
 			x5=0;
 			defaultEyes=0;
+			defaultMane=0;
+			defaultBackmane=0;
+			defaultTail=0;
 		};
 		
 		
@@ -33,12 +37,18 @@
 	    this.race = x2;
 	    this.ethnicity = x3;
 	    this.hair = x4;
+		this.mane = defaultMane;
+		this.backmane = defaultBackmane;
+		this.tail = defaultTail;
 	    this.eyes = x5;
 		this.eyesBright = 1;
+		this.eyesSatur = 100;
 		this.eyetype = defaultEyes;
 		this.drawMyChar = () => {
-	        charCtx.clearRect(0, 0, 48, 48);
+	        charCtx.clearRect(0, 0, 128, 128);
 			charCtx.filter = 'hue-rotate(' + this.race + 'deg) brightness(' + this.ethnicity + ')  ';
+			
+			
 			if (this.gender == "male") {
 	            charCtx.drawImage(myImage, 0, 0, 128, 128, 0, 0, 128, 128);
 	        } else if (this.gender == "female") {
@@ -54,12 +64,29 @@
 			charCtx.drawImage(eyetypes, 0, 0, 128, 128, 0, 0, 128, 128);
 			};
 			
-	        charCtx.filter = 'hue-rotate(' + this.eyes + 'deg)   brightness(' + this.eyesBright + ')';
+	        charCtx.filter = 'hue-rotate(' + this.eyes + 'deg)   brightness(' + this.eyesBright + ') saturate(' + this.eyesSatur + '%)';
 			if (this.eyetype==0) {
 			charCtx.drawImage(myImage2, 128, 0, 128, 128, 0, 0, 128, 128);
 			} else {
 			charCtx.drawImage(myImage2, 0, 0, 128, 128, 0, 0, 128, 128);
 			};
+			
+			
+			if (this.mane == 0) {
+	            charCtx.drawImage(fmanestyle, 0, 0, 128, 128, 0, 0, 128, 128);
+	        } else if (this.mane == 1) {
+	            charCtx.drawImage(fmanestyle, 128, 0, 128, 128, 0, 0, 128, 128);
+	        } else if (this.mane == 2) {
+	            charCtx.drawImage(fmanestyle, 256, 0, 128, 128, 0, 0, 128, 128);
+	        } else if (this.mane == 3) {
+	            charCtx.drawImage(fmanestyle, 384, 0, 128, 128, 0, 0, 128, 128);
+	        } else if (this.mane == 4) {
+	            charCtx.drawImage(fmanestyle, 0, 128, 128, 128, 0, 0, 128, 128);
+	        } else if (this.mane == 5) {
+	            charCtx.drawImage(fmanestyle, 128, 128, 128, 128, 0, 0, 128, 128);
+	        } else {
+	            charCtx.drawImage(fmanestyle, 0, 0, 128, 128, 0, 0, 128, 128);
+	        };
 			
 			
 	        charCtx.filter = 'hue-rotate(' + this.hair[0] + 'deg) brightness(' + Number(1 - (this.hair[0] / 1000)) + ')  ';
@@ -139,3 +166,10 @@ function toHSLObject(OLDHSL) {
   obj.l = parseInt(array[2].replace('/%+/g)', ''), 10);
   return obj;
 }
+
+const eyeBright = document.querySelector('#eyeBright')
+const eyebrightNumIn = document.querySelector('#eyebrightNumIn')
+
+document.addEventListener('DOMContentLoaded', function() {
+   char.drawMyChar();
+}, false);

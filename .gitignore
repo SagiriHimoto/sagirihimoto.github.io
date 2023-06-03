@@ -5,3 +5,12 @@
 /Templates.js
 /.vs
 /.git
+node_modules
+sagirihimoto.github.io/Gemfile.lock
+sagirihimoto.github.io/about.markdown
+sagirihimoto.github.io/index.markdown
+sagirihimoto.github.io/Gemfile
+sagirihimoto.github.io/_posts/2023-06-03-welcome-to-jekyll.markdown
+sagirihimoto.github.io/_config.yml
+package.json
+package-lock.json
