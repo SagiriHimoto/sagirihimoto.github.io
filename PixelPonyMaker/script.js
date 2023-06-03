@@ -34,7 +34,9 @@
 		
 		
 	    this.gender = "male";
-	    this.race = x2;
+	    this.Bodycolor = x2;
+		this.Bodybright = 1;
+		this.Bodysatur = 100;
 	    this.ethnicity = x3;
 	    this.hair = x4;
 		this.mane = defaultMane;
@@ -46,16 +48,9 @@
 		this.eyetype = defaultEyes;
 		this.drawMyChar = () => {
 	        charCtx.clearRect(0, 0, 128, 128);
-			charCtx.filter = 'hue-rotate(' + this.race + 'deg) brightness(' + this.ethnicity + ')  ';
-			
-			
-			if (this.gender == "male") {
-	            charCtx.drawImage(myImage, 0, 0, 128, 128, 0, 0, 128, 128);
-	        } else if (this.gender == "female") {
-	            charCtx.drawImage(myImage, 192, 0, 48, 48, 0, 0, 48, 48);
-	        } else {
-	            charCtx.drawImage(myImage, 336, 0, 48, 48, 0, 0, 48, 48);
-	        };
+			charCtx.filter = 'hue-rotate(' + this.Bodycolor + 'deg) brightness(' + this.Bodybright + ') saturate(' + this.Bodysatur + '%)';
+
+	        charCtx.drawImage(myImage, 0, 0, 128, 128, 0, 0, 128, 128);
 			
 			charCtx.filter = 'none';
 			if (this.eyetype==0) {
@@ -167,9 +162,28 @@ function toHSLObject(OLDHSL) {
   return obj;
 }
 
-const eyeBright = document.querySelector('#eyeBright')
+const eyeBrightIn = document.querySelector('#eyeBright')
 const eyebrightNumIn = document.querySelector('#eyebrightNumIn')
+const eyeColorIn = document.querySelector("#eyeColor")
+const eyecolorNumIn = document.querySelector("#eyecolorNumIn")
+const eyeSaturIn = document.querySelector("#eyeSatur")
+const eyesaturNumIn = document.querySelector("#eyesaturNumIn")
+
+const bodyBrightIn = document.querySelector('#bodyBrightIn')
+const bodybrightNumIn = document.querySelector('#bodybrightNumIn')
+const bodyColorIn = document.querySelector("#bodyColorIn")
+const bodycolorNumIn = document.querySelector("#bodycolorNumIn")
+const bodySaturIn = document.querySelector("#bodySaturIn")
+const bodysaturNumIn = document.querySelector("#bodysaturNumIn")
 
 document.addEventListener('DOMContentLoaded', function() {
    char.drawMyChar();
 }, false);
+
+window.onscroll = function (e) { 
+		if (window.scrollY > 80) {
+			document.querySelector("#charScreen").className = "chrscr fixedSCR";
+		} else {
+			document.querySelector("#charScreen").className = "chrscr";
+		}
+}

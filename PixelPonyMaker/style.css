@@ -16,7 +16,17 @@ img:hover{
 	}
 	
 .chrscr {
-	width: 384px; height: 384px;background-color:transparent; border-radius: 10px;transition: 0.2s;
+	width: 384px;
+	height: 384px;
+	background-color:transparent;
+	border-radius: 10px;
+	display: block;
+	position: relative;
+	z-index: 999;
+}
+.fixedSCR {
+	position: fixed;
+	top:-50px;
 }
 @media only screen and (max-width: 600px) {
 
@@ -36,10 +46,12 @@ img:hover{
 		width:calc(100% - 10px);
 		height: auto;
 		background-color: red;
+		display: block;
+		position: relative;
 	}
 }
 
-.charedititem{background-color: #333; display:inline-block; border: 1px solid #555; border-left: 1px solid #555; border-top: 1px solid #555; padding:0px; width: 81px; background-repeat:no-repeat;background-size:81px;background-position:center;image-rendering:pixelated;height:81px;background-image:var(--itembg);}
+.charedititem{background-color: #333; display:inline-block; border: 1px solid #555; border-left: 1px solid #555; border-top: 1px solid #555; padding:0px; width: 81px; background-repeat:no-repeat;background-size:54px;background-position:center;image-rendering:pixelated;height:81px;background-image:var(--itembg);}
 .charedititemactive{background-color:#ccc!important;}
 
 	.lol{

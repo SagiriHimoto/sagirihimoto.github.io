@@ -42,16 +42,24 @@
 		char.hair[1] = 4;
 		char.drawMyChar()">&#9895;</button>
 <br> </div>
+<div class="eyecontainer">
+<input id="bodyColorIn" type="range" class="rainbowslider" value="0" max="360" step="1" onChange="char.Bodycolor = value;bodycolorNumIn.value=value;char.drawMyChar();">
+<input type="number" class="numberinput" id="bodycolorNumIn" value="0" step="1" min="0" max="360" onChange="char.Bodycolor = value;bodyColorIn.value=value;char.drawMyChar();"><br/>
+<input id="bodyBrightIn" type="range" class="brightnessslider" value="1" max="6" step="0.1" onChange="char.Bodybright = value;bodybrightNumIn.value=value;char.drawMyChar();">
+<input type="number" class="numberinput" id="bodybrightNumIn" value="1" step="0.1" min="0" max="6" onChange="char.Bodybright = value;bodyBrightIn.value=value;char.drawMyChar();"><br/>
+<input id="bodySaturIn" type="range" class="saturationslider" value="100" max="150" step="1" onChange="char.Bodysatur = value;bodysaturNumIn.value=value;char.drawMyChar();">
+<input type="number" class="numberinput" id="bodysaturNumIn" value="100" step="1" min="0" max="150" onChange="char.Bodysatur = value;bodySaturIn.value=value;char.drawMyChar();">
+</div>
 </div>
 
 <div id="Mane" class="tabcontent">
 <div style="margin: 15px; background: #212121; border: 1px solid #555; display: block; overflow: hidden; border-radius: 3px;"><div style="display:table;margin-bottom:-4px;">
-		<div class="charedititem mane" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.mane = 0;maneinactive(0);char.drawMyChar()"></div>
-		<div class="charedititem mane" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.mane = 1;maneinactive(1);char.drawMyChar()"></div>
-		<div class="charedititem mane" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.mane = 2;maneinactive(2);char.drawMyChar()"></div>
-		<div class="charedititem mane" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.mane = 3;maneinactive(3);char.drawMyChar()"></div>
-		<div class="charedititem mane" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.mane = 4;maneinactive(4);char.drawMyChar()"></div>
-		<div class="charedititem mane" style="--itembg: url(../assets/AzureShoreBShade.png);" onClick="char.mane = 5;maneinactive(5);char.drawMyChar()"></div>
+		<div class="charedititem mane charedititemactive" style="--itembg: url(./assets/mane1.png);" onClick="char.mane = 0;maneinactive(0);char.drawMyChar()"></div>
+		<div class="charedititem mane" style="--itembg: url(./assets/mane2.png);" onClick="char.mane = 1;maneinactive(1);char.drawMyChar()"></div>
+		<div class="charedititem mane" style="--itembg: url(./assets/mane3.png);" onClick="char.mane = 2;maneinactive(2);char.drawMyChar()"></div>
+		<div class="charedititem mane" style="--itembg: url(./assets/mane4.png);" onClick="char.mane = 3;maneinactive(3);char.drawMyChar()"></div>
+		<div class="charedititem mane" style="--itembg: url(./assets/mane5.png);" onClick="char.mane = 4;maneinactive(4);char.drawMyChar()"></div>
+		<div class="charedititem mane" style="--itembg: url(./assets/mane6.png);" onClick="char.mane = 5;maneinactive(5);char.drawMyChar()"></div>
 		</div></div>
 race
 
@@ -75,12 +83,13 @@ backSize.style.backgroundSize = '300%';"><button onClick="char.hair[1]+=1; if(ch
 		<div class="charedititemactive charedititem eye" style="--itembg: url(./assets/eyesNRM.png);" onClick="char.eyetype = 0;eyesinactive(0);char.drawMyChar()"></div>
 		<div class="charedititem eye" style="--itembg: url(./assets/eyesFLT.png);" onClick="char.eyetype = 1;eyesinactive(1);char.drawMyChar()"></div>
 		</div></div>
-eye color<br/>
 <div class="eyecontainer">
-<input id="eyeColor" type="range" class="rainbowslider" value="0" max="360" step="1" onChange="char.eyes = value;char.drawMyChar();">
+<input id="eyeColor" type="range" class="rainbowslider" value="0" max="360" step="1" onChange="char.eyes = value;eyecolorNumIn.value=value;char.drawMyChar();">
+<input type="number" class="numberinput" id="eyecolorNumIn" value="0" step="1" min="0" max="360" onChange="char.eyes = value;eyeColorIn.value=value;char.drawMyChar();"><br/>
 <input id="eyeBright" type="range" class="brightnessslider" value="1" max="6" step="0.1" onChange="char.eyesBright = value;eyebrightNumIn.value=value;char.drawMyChar();">
-<input type="number" class="numberinput" id="eyebrightNumIn" value="1" step="0.1" min="0" max="6" onChange="char.eyesBright = value;eyeBright.value=value;char.drawMyChar();">
-<input id="eyeSatur" type="range" class="saturationslider" value="100" max="100" step="0.1" onChange="char.eyesSatur = value;char.drawMyChar();">
+<input type="number" class="numberinput" id="eyebrightNumIn" value="1" step="0.1" min="0" max="6" onChange="char.eyesBright = value;eyeBrightIn.value=value;char.drawMyChar();"><br/>
+<input id="eyeSatur" type="range" class="saturationslider" value="100" max="150" step="1" onChange="char.eyesSatur = value;eyesaturNumIn.value=value;char.drawMyChar();">
+<input type="number" class="numberinput" id="eyesaturNumIn" value="100" step="1" min="0" max="150" onChange="char.eyesSatur = value;eyeSaturIn.value=value;char.drawMyChar();">
 </div>
 </div>
 </div>	
