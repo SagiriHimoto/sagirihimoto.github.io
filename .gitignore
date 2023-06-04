@@ -14,3 +14,8 @@ sagirihimoto.github.io/_posts/2023-06-03-welcome-to-jekyll.markdown
 sagirihimoto.github.io/_config.yml
 package.json
 package-lock.json
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
