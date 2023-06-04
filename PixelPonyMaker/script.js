@@ -24,7 +24,7 @@
 			x1="male";
 			x2=0;
 			x3=1;
-			x4=[ [0],[4],[48, 240, 336] ];
+			x4=[ [0],[4],[48, 200, 336] ];
 			x5=0;
 			defaultEyes=0;
 			defaultMane=0;
@@ -40,6 +40,15 @@
 	    this.ethnicity = x3;
 	    this.hair = x4;
 		this.mane = defaultMane;
+		this.manePattern = 0;
+		this.maneColor1 = [ [0], [1], [100] ];
+		this.maneColor2 = [ [45], [1], [100] ];
+		this.maneColor3 = [ [90], [1], [100] ];
+		this.maneColor4 = [ [135], [1], [100] ];
+		this.maneColor5 = [ [180], [1], [100] ];
+		this.maneColor6 = [ [225], [1], [100] ];
+		this.maneColor7 = [ [270], [1], [100] ];
+		this.maneColor8 = [ [315], [1], [100] ];
 		this.backmane = defaultBackmane;
 		this.tail = defaultTail;
 	    this.eyes = x5;
@@ -66,7 +75,7 @@
 			charCtx.drawImage(myImage2, 0, 0, 128, 128, 0, 0, 128, 128);
 			};
 			
-			
+			charCtx.filter = 'hue-rotate(' + this.maneColor1[0] + 'deg)   brightness(' + this.maneColor1[1] + ') saturate(' + this.maneColor1[2] + '%)';
 			if (this.mane == 0) {
 	            charCtx.drawImage(fmanestyle, 0, 0, 128, 128, 0, 0, 128, 128);
 	        } else if (this.mane == 1) {
@@ -175,6 +184,55 @@ const bodyColorIn = document.querySelector("#bodyColorIn")
 const bodycolorNumIn = document.querySelector("#bodycolorNumIn")
 const bodySaturIn = document.querySelector("#bodySaturIn")
 const bodysaturNumIn = document.querySelector("#bodysaturNumIn")
+
+const ManeColor1Input = document.querySelector('#ManeColor1Input')
+const ManeColor2Input = document.querySelector('#ManeColor2Input')
+const ManeColor3Input = document.querySelector('#ManeColor3Input')
+const ManeColor4Input = document.querySelector('#ManeColor4Input')
+const ManeColor5Input = document.querySelector('#ManeColor5Input')
+const ManeColor6Input = document.querySelector('#ManeColor6Input')
+const ManeColor7Input = document.querySelector('#ManeColor7Input')
+const ManeColor8Input = document.querySelector('#ManeColor8Input')
+const ManeColor1NumIn = document.querySelector('#ManeColor1NumIn')
+const ManeColor2NumIn = document.querySelector('#ManeColor2NumIn')
+const ManeColor3NumIn = document.querySelector('#ManeColor3NumIn')
+const ManeColor4NumIn = document.querySelector('#ManeColor4NumIn')
+const ManeColor5NumIn = document.querySelector('#ManeColor5NumIn')
+const ManeColor6NumIn = document.querySelector('#ManeColor6NumIn')
+const ManeColor7NumIn = document.querySelector('#ManeColor7NumIn')
+const ManeColor8NumIn = document.querySelector('#ManeColor8NumIn')
+const ManeBright1Input = document.querySelector('#ManeBright1Input')
+const ManeBright2Input = document.querySelector('#ManeBright2Input')
+const ManeBright3Input = document.querySelector('#ManeBright3Input')
+const ManeBright4Input = document.querySelector('#ManeBright4Input')
+const ManeBright5Input = document.querySelector('#ManeBright5Input')
+const ManeBright6Input = document.querySelector('#ManeBright6Input')
+const ManeBright7Input = document.querySelector('#ManeBright7Input')
+const ManeBright8Input = document.querySelector('#ManeBright8Input')
+const ManeBright1NumIn = document.querySelector('#ManeBright1NumIn')
+const ManeBright2NumIn = document.querySelector('#ManeBright2NumIn')
+const ManeBright3NumIn = document.querySelector('#ManeBright3NumIn')
+const ManeBright4NumIn = document.querySelector('#ManeBright4NumIn')
+const ManeBright5NumIn = document.querySelector('#ManeBright5NumIn')
+const ManeBright6NumIn = document.querySelector('#ManeBright6NumIn')
+const ManeBright7NumIn = document.querySelector('#ManeBright7NumIn')
+const ManeBright8NumIn = document.querySelector('#ManeBright8NumIn')
+const ManeSat1Input = document.querySelector('#ManeSat1Input')
+const ManeSat2Input = document.querySelector('#ManeSat2Input')
+const ManeSat3Input = document.querySelector('#ManeSat3Input')
+const ManeSat4Input = document.querySelector('#ManeSat4Input')
+const ManeSat5Input = document.querySelector('#ManeSat5Input')
+const ManeSat6Input = document.querySelector('#ManeSat6Input')
+const ManeSat7Input = document.querySelector('#ManeSat7Input')
+const ManeSat8Input = document.querySelector('#ManeSat8Input')
+const ManeSat1NumIn = document.querySelector('#ManeSat1NumIn')
+const ManeSat2NumIn = document.querySelector('#ManeSat2NumIn')
+const ManeSat3NumIn = document.querySelector('#ManeSat3NumIn')
+const ManeSat4NumIn = document.querySelector('#ManeSat4NumIn')
+const ManeSat5NumIn = document.querySelector('#ManeSat5NumIn')
+const ManeSat6NumIn = document.querySelector('#ManeSat6NumIn')
+const ManeSat7NumIn = document.querySelector('#ManeSat7NumIn')
+const ManeSat8NumIn = document.querySelector('#ManeSat8NumIn')
 
 document.addEventListener('DOMContentLoaded', function() {
    char.drawMyChar();
