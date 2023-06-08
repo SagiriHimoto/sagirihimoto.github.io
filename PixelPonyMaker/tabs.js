@@ -99,6 +99,14 @@ function maneinactive(SomeManeToActivate) {
   actualManes[SomeManeToActivate].className = actualManes[SomeManeToActivate].className.replace("charedititem mane", "charedititem mane charedititemactive");
 }
 
+function manepatterninactive(SomeManePatternToActivate) {
+  actualManePatterns = document.getElementsByClassName("manepattern");
+  for (i = 0; i < actualManePatterns.length; i++) {
+    actualManePatterns[i].className = actualManePatterns[i].className.replace("charedititem manepattern charedititemactive", "charedititem manepattern");
+  }
+  actualManePatterns[SomeManePatternToActivate].className = actualManePatterns[SomeManePatternToActivate].className.replace("charedititem manepattern", "charedititem manepattern charedititemactive");
+}
+
 function eyesinactive(SomeEyeToActivate) {
   actualEyes = document.getElementsByClassName("eye");
   for (i = 0; i < actualEyes.length; i++) {

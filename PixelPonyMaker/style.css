@@ -52,7 +52,43 @@ img:hover{
 	}
 }
 
-.charedititem{background-color: #333; display:inline-block; border: 1px solid #555; border-left: 1px solid #555; border-top: 1px solid #555; padding:0px; width: 81px; background-repeat:no-repeat;background-size:54px;background-position:center;image-rendering:pixelated;height:81px;background-image:var(--itembg);}
+.eyecontainer{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.colorselectorcontscont{
+	width: 160px;
+	display: inline-block;
+}
+
+.colorselectorcont{
+	padding: 5px;
+	padding-right: 40px;
+	padding-left: 15px;
+	background-color: #333;
+	display:inline-block;
+	border: 2px solid #555;
+}
+
+.colorselectcolorbox{
+	position: relative;
+	width: 15px;
+	height: 15px;
+	border: 2px solid #555;
+	left: -10px;
+	background-color: var(--colorboxbackgroundcolor);
+}
+
+.itemslcttable {
+	display:table;
+}
+
+.itmslctcontainer {
+	margin: 15px; background: #212121; border: 1px solid #555; display: block; overflow: hidden; border-radius: 3px;
+}
+
+.charedititem{background-color: #333; display:inline-block; border: 1px solid #555; border-left: 1px solid #555; border-top: 1px solid #555; padding:0px; width: 81px; background-repeat:no-repeat;background-size:54px;background-position:center;image-rendering:pixelated;height:81px;background-image:var(--itembg);margin-bottom:-4px;}
 .charedititemactive{background-color:#ccc!important;}
 
 	.lol{
@@ -73,15 +109,14 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 27px;
   cursor: pointer;
-  border: 2px solid #010101;
+  border: 2px solid #555;
 }
 
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-  border: 2px solid #000000;
+  border: 1px solid #000;
   height: 28px;
-  width: 5px;
-  background: #fff;
+  width: 4px;
+  background: #000;
   cursor: pointer;
   -webkit-appearance: none;
   top: -2px;
@@ -96,7 +131,8 @@ input[type=range]::-webkit-slider-thumb {
 	top: -9px;
     position: relative;
     height: 21px;
-    border: 2px solid #000;
+    border: 2px solid #555;
+	width: 50px;
 }
 
 /* Style the tab */

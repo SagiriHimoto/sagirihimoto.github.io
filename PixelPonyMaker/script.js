@@ -2,18 +2,26 @@
 
 		//body
 	var myImage = document.getElementById("bodyTexture");
+	myImage.crossOrigin = "Anonymous";
 	//eyes
 	var myImage2 = document.getElementById("EYEris");
+	myImage2.crossOrigin = "Anonymous";
 	var eyetypes = document.getElementById("EYEs");
+	eyetypes.crossOrigin = "Anonymous";
 	//hair
 		var fmanestyle = document.getElementById("maneTexture");
+		fmanestyle.crossOrigin = "Anonymous";
+		var fmane2style = document.getElementById("mane2Texture");
+		fmane2style.crossOrigin = "Anonymous";
 	var myImage3 = document.getElementById("myImg3");
+	myImage3.crossOrigin = "Anonymous";
 	//weapons and gear
 	var myImage4 = document.getElementById("offWeapons");
+	myImage4.crossOrigin = "Anonymous";
 	var myImage5 = document.getElementById("armor");
+	myImage5.crossOrigin = "Anonymous";
 	var myImage6 = document.getElementById("mainHand");
-	
-    var backSize = document.getElementById("gd1");
+	myImage6.crossOrigin = "Anonymous";
     var screen = document.getElementById("charScreen");
 	screen.width = 128;
 	screen.height = 128;
@@ -41,7 +49,7 @@
 	    this.hair = x4;
 		this.mane = defaultMane;
 		this.manePattern = 0;
-		this.maneColor1 = [ [0], [1], [100] ];
+		this.maneColor1 = [ [0], [100], [100] ];
 		this.maneColor2 = [ [45], [1], [100] ];
 		this.maneColor3 = [ [90], [1], [100] ];
 		this.maneColor4 = [ [135], [1], [100] ];
@@ -79,7 +87,14 @@
 			if (this.mane == 0) {
 	            charCtx.drawImage(fmanestyle, 0, 0, 128, 128, 0, 0, 128, 128);
 	        } else if (this.mane == 1) {
-	            charCtx.drawImage(fmanestyle, 128, 0, 128, 128, 0, 0, 128, 128);
+				charCtx.filter = 'none';
+	            charCtx.drawImage(fmane2style, 256, 0, 128, 128, 0, 0, 128, 128);
+								charCtx.globalCompositeOperation = 'multiply'
+				charCtx.filter = 'hue-rotate(' + this.maneColor1[0] + 'deg)   brightness(' + this.maneColor1[1] + '%) saturate(' + this.maneColor1[2] + '%)';
+				charCtx.drawImage(fmane2style, 0, 0, 128, 128, 0, 0, 128, 128);
+				charCtx.filter = 'none';
+				/* charCtx.drawImage(fmane2style, 0, 128, 128, 128, 0, 0, 128, 128); */
+				charCtx.globalCompositeOperation = 'source-over'
 	        } else if (this.mane == 2) {
 	            charCtx.drawImage(fmanestyle, 256, 0, 128, 128, 0, 0, 128, 128);
 	        } else if (this.mane == 3) {
