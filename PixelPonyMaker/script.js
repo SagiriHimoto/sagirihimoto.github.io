@@ -2,30 +2,36 @@
 
 		//body
 	var myImage = document.getElementById("bodyTexture");
-	myImage.crossOrigin = "Anonymous";
 	//eyes
 	var myImage2 = document.getElementById("EYEris");
-	myImage2.crossOrigin = "Anonymous";
 	var eyetypes = document.getElementById("EYEs");
-	eyetypes.crossOrigin = "Anonymous";
 	//hair
 		var fmanestyle = document.getElementById("maneTexture");
-		fmanestyle.crossOrigin = "Anonymous";
 		var fmane2style = document.getElementById("mane2Texture");
-		fmane2style.crossOrigin = "Anonymous";
 	var myImage3 = document.getElementById("myImg3");
-	myImage3.crossOrigin = "Anonymous";
 	//weapons and gear
 	var myImage4 = document.getElementById("offWeapons");
-	myImage4.crossOrigin = "Anonymous";
 	var myImage5 = document.getElementById("armor");
-	myImage5.crossOrigin = "Anonymous";
 	var myImage6 = document.getElementById("mainHand");
-	myImage6.crossOrigin = "Anonymous";
     var screen = document.getElementById("charScreen");
+	var SetCrossOrigin = false
 	screen.width = 128;
 	screen.height = 128;
 	var charCtx = screen.getContext("2d");
+	
+	if (SetCrossOrigin == true) {
+		myImage4.crossOrigin = "Anonymous";
+	myImage5.crossOrigin = "Anonymous";
+	myImage6.crossOrigin = "Anonymous";
+	myImage3.crossOrigin = "Anonymous";
+	fmane2style.crossOrigin = "Anonymous";
+	fmanestyle.crossOrigin = "Anonymous";
+	eyetypes.crossOrigin = "Anonymous";
+	myImage2.crossOrigin = "Anonymous";
+	myImage.crossOrigin = "Anonymous";
+	} else {
+		console.log("Hey Sexy")
+	}
 	
      function NewChar(x1,x2,x3,x4,x5,defaultEyes) {
 		if(x1==undefined){
@@ -88,13 +94,11 @@
 	            charCtx.drawImage(fmanestyle, 0, 0, 128, 128, 0, 0, 128, 128);
 	        } else if (this.mane == 1) {
 				charCtx.filter = 'none';
-	            charCtx.drawImage(fmane2style, 256, 0, 128, 128, 0, 0, 128, 128);
+	            				drawFrontMane1AndHornColor();
+								charCtx.filter = 'none';
 								charCtx.globalCompositeOperation = 'multiply'
-				charCtx.filter = 'hue-rotate(' + this.maneColor1[0] + 'deg)   brightness(' + this.maneColor1[1] + '%) saturate(' + this.maneColor1[2] + '%)';
-				charCtx.drawImage(fmane2style, 0, 0, 128, 128, 0, 0, 128, 128);
-				charCtx.filter = 'none';
-				/* charCtx.drawImage(fmane2style, 0, 128, 128, 128, 0, 0, 128, 128); */
-				charCtx.globalCompositeOperation = 'source-over'
+								charCtx.drawImage(fmane2style, 256, 0, 128, 128, 0, 0, 128, 128);
+								charCtx.globalCompositeOperation = 'source-over';
 	        } else if (this.mane == 2) {
 	            charCtx.drawImage(fmanestyle, 256, 0, 128, 128, 0, 0, 128, 128);
 	        } else if (this.mane == 3) {
