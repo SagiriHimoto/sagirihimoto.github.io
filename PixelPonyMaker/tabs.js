@@ -40,7 +40,6 @@ function openManeColors(evt, maneName) {
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(maneName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 
@@ -97,14 +96,49 @@ function maneinactive(SomeManeToActivate) {
     actualManes[i].className = actualManes[i].className.replace("charedititem mane charedititemactive", "charedititem mane");
   }
   actualManes[SomeManeToActivate].className = actualManes[SomeManeToActivate].className.replace("charedititem mane", "charedititem mane charedititemactive");
+			for (i = 0; i < actualManePatterns.length; i++) {
+				if (i > char.manePatternCountPerMane[SomeManeToActivate]) {
+					actualManePatterns[i-1].className = "nodisplay manepattern";
+					} else {
+					if (i != char.manePattern) {
+						actualManePatterns[i].className = "charedititem manepattern";
+					} else {
+						actualManePatterns[i].className = "charedititem manepattern charedititemactive";
+					}
+				}
+			}
+			if (char.manePattern > char.manePatternCountPerMane[SomeManeToActivate]) {
+			char.manePattern = char.manePatternCountPerMane[SomeManeToActivate];
+			manepatterninactive(char.manePatternCountPerMane[SomeManeToActivate]);
+			char.drawMyChar();
+			}
+			changepatternitemsgraphics(SomeManeToActivate + 1)
+}
+
+function changepatternitemsgraphics(thatpatternitemboxgraphictochange) {
+	if (thatpatternitemboxgraphictochange == 1) {
+		manepattern1.style.setProperty('--itembg', 'url(./assets/mane1.png)');
+	} else if (thatpatternitemboxgraphictochange == 2) {
+		manepattern1.style.setProperty('--itembg', 'url(./assets/mane2.png)');
+		manepattern2.style.setProperty('--itembg', 'url(./assets/mane2pattern1.png)');
+	} else if (thatpatternitemboxgraphictochange == 3) {
+		manepattern1.style.setProperty('--itembg', 'url(./assets/mane3.png)');;
+	} else if (thatpatternitemboxgraphictochange == 4) {
+		manepattern1.style.setProperty('--itembg', 'url(./assets/mane4.png)');;
+	} else if (thatpatternitemboxgraphictochange == 5) {
+		manepattern1.style.setProperty('--itembg', 'url(./assets/mane5.png)');;
+	} else if (thatpatternitemboxgraphictochange == 6) {
+		manepattern1.style.setProperty('--itembg', 'url(./assets/mane6.png)');;
+	}
+	console.log(thatpatternitemboxgraphictochange)
 }
 
 function manepatterninactive(SomeManePatternToActivate) {
-  actualManePatterns = document.getElementsByClassName("manepattern");
   for (i = 0; i < actualManePatterns.length; i++) {
     actualManePatterns[i].className = actualManePatterns[i].className.replace("charedititem manepattern charedititemactive", "charedititem manepattern");
   }
   actualManePatterns[SomeManePatternToActivate].className = actualManePatterns[SomeManePatternToActivate].className.replace("charedititem manepattern", "charedititem manepattern charedititemactive");
+  char.manePattern = SomeManePatternToActivate;
 }
 
 function eyesinactive(SomeEyeToActivate) {

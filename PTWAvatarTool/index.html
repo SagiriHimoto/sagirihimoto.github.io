@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="../assets/AzureShoreBShade.png">
+    <title>AzureChive - Placeholder Post</title>
+    <meta content='AzureChive - Pony Town Wiki "Developer Avatar" tool' property="og:title" />
+    <meta content="AzureChive is an internet archive for files and posts of all kinds" property="og:description" />
+    <meta content="https://twitter.com/this-is-the-site-url" property="og:url" />
+    <meta content="https://embed.com/embedimage.png" property="og:image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <!-- <meta name="twitter:card" content="summary_large_image"> -->
+    <!-- Load Javascript.js -->
+    <script type="text/javascript" src="boot.js"></script>
+    <link href="../styles/styles.css" rel="stylesheet" />
+    <!-- Enables styles -->
+</head>
+<body>
+<div class="BlogPostMain">
+<div class="BlogText">
+<div class="AuthorTextMuted">
+Posted by SagiriHimoto on July 11th of 2023</div>
+<div class="ABlogTextTitle">"Developer avatar" tool for PTW</div>
+<script>
+const NameInput = document.querySelector("#nameinput");
+const PositionInput = document.querySelector("#positioninput");
+const PfpUrlInput = document.querySelector("#pfpurlinput");
+
+const advancedsettingscheckbox = document.querySelector("#advancedsettings");
+
+NameInput.addEventListener("input", UPDATEALL, false);
+PositionInput.addEventListener("input", UPDATEALL, false);
+PfpUrlInput.addEventListener("input", UPDATEALL, false);
+
+function UPDATEALL() {
+	
+}
+</script>
+<div class="ABlogText" id="ok">
+	Input goes here here:<br/><br/>
+	<span>Name:</span><input class="ptform" type="text" id="nameinput"><br/>
+	<span>Position:</span><input class="ptform" type="text" id="positioninput"><br/>
+	<span>PFP URL:</span><input class="ptform" type="text" id="pfpurlinput"><br/>
+	<input type="checkbox" id="advancedsettings" onchange="console.log(document.querySelector("#advancedsettings").value);"><label style="vertical-align: top;"> Advanced Customization</label><br/>
+	<button class='btn' onclick='location.href =\"https://twitter.com/intent/follow?screen_name=SagiriHimoto\";'>Generate</button><br/><br/>
+	Output goes here:<br/><br/>
+	<span>HTML:</span><div id="htmlcodefordevthingy"></div><br/>
+	<span>Full on Canvas:</span><canvas id="fullcanvas"></canvas><br/>
+	<span>Only Avatar on Canvas:</span><canvas id="pfpcanvas"></canvas>
+</div>
+</div>
+</div>
+</body>
+</html>

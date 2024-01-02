@@ -52,7 +52,18 @@ img:hover{
 	}
 }
 
-#style1 {
+.nodisplay {
+	display: none;
+}
+
+.input-error {
+  outline: 1px solid red;
+}
+
+.manecolorsbox {
+}
+
+.colorboxstylesareweird {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -63,17 +74,15 @@ img:hover{
   border: none;
   cursor: pointer;
 }
-#style1::-webkit-color-swatch {
+.colorboxstylesareweird::-webkit-color-swatch {
   border-radius: 0.25rem;
   border: 1px solid #555;
-  min-width: 37px;
-  min-height: 37px;
+  min-width: 38px;
+  min-height: 38px;
 }
-#style1::-moz-color-swatch {
-  border-radius: 0.25rem;
-  border: 1px solid #555;
-  min-width: 37px;
-  min-height: 37px;
+.colorboxstylesareweird::-moz-color-swatch {
+  min-width: 38px;
+  min-height: 38px;
 }
 .ptform {
 	position: relative;
@@ -92,7 +101,7 @@ img:hover{
 	border-radius: 0.25rem;
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	margin:10px;
-    min-height: 25px;
+    min-height: 26px;
     flex: 1 0 21%;
 }
 

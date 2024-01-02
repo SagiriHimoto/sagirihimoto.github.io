@@ -18,6 +18,7 @@
 	screen.width = 128;
 	screen.height = 128;
 	var charCtx = screen.getContext("2d");
+	var gl = screen.getContext('webgl');
 	
 	if (SetCrossOrigin == true) {
 		myImage4.crossOrigin = "Anonymous";
@@ -55,14 +56,21 @@
 	    this.hair = x4;
 		this.mane = defaultMane;
 		this.manePattern = 0;
-		this.maneColor1 = [ [0], [100], [100] ];
-		this.maneColor2 = [ [45], [1], [100] ];
-		this.maneColor3 = [ [90], [1], [100] ];
-		this.maneColor4 = [ [135], [1], [100] ];
-		this.maneColor5 = [ [180], [1], [100] ];
-		this.maneColor6 = [ [225], [1], [100] ];
-		this.maneColor7 = [ [270], [1], [100] ];
-		this.maneColor8 = [ [315], [1], [100] ];
+		this.manePatternCountPerMane = [ [1], [2], [1], [1], [1], [1] ];
+		this.mane1patternsColorCount = [ [1] ];
+		this.mane2patternsColorCount = [ [1], [5] ];
+		this.mane3patternsColorCount = [ [1] ];
+		this.mane4patternsColorCount = [ [1] ];
+		this.mane5patternsColorCount = [ [1] ];
+		this.mane6patternsColorCount = [ [1] ];
+		this.maneColor1 = "#EA7472";
+		this.maneColor2 = "#EA7472";
+		this.maneColor3 = "#EA7472";
+		this.maneColor4 = "#EA7472";
+		this.maneColor5 = "#EA7472";
+		this.maneColor6 = "#EA7472";
+		this.maneColor7 = "#EA7472";
+		this.maneColor8 = "#EA7472";
 		this.backmane = defaultBackmane;
 		this.tail = defaultTail;
 	    this.eyes = x5;
@@ -252,10 +260,65 @@ const ManeSat5NumIn = document.querySelector('#ManeSat5NumIn')
 const ManeSat6NumIn = document.querySelector('#ManeSat6NumIn')
 const ManeSat7NumIn = document.querySelector('#ManeSat7NumIn')
 const ManeSat8NumIn = document.querySelector('#ManeSat8NumIn')
+const InputForFrontManeColor1 = document.querySelector("#InputForFrontManeColor1")
+const InputForFrontManeColor2 = document.querySelector("#InputForFrontManeColor2")
+const InputForFrontManeColor3 = document.querySelector("#InputForFrontManeColor3")
+const InputForFrontManeColor4 = document.querySelector("#InputForFrontManeColor4")
+const InputForFrontManeColor5 = document.querySelector("#InputForFrontManeColor5")
+const InputForFrontManeColor1Text = document.querySelector("#InputForFrontManeColor1Text")
+const InputForFrontManeColor2Text = document.querySelector("#InputForFrontManeColor2Text")
+const InputForFrontManeColor3Text = document.querySelector("#InputForFrontManeColor3Text")
+const InputForFrontManeColor4Text = document.querySelector("#InputForFrontManeColor4Text")
+const InputForFrontManeColor5Text = document.querySelector("#InputForFrontManeColor5Text")
+const manepattern1 = document.querySelector("#manepattern1")
+const manepattern2 = document.querySelector("#manepattern2")
+const manepattern3 = document.querySelector("#manepattern3")
+const manepattern4 = document.querySelector("#manepattern4")
+const manepattern5 = document.querySelector("#manepattern5")
+const manepattern6 = document.querySelector("#manepattern6")
+const actualManePatterns = document.getElementsByClassName("manepattern");
+
+function ColorChangerStartup() {
+  InputForFrontManeColor1.addEventListener("input", updateManeColor1, false);
+  InputForFrontManeColor1Text.addEventListener("input", updateManeColor1Text, false);
+  InputForFrontManeColor2.addEventListener("input", updateManeColor2, false);
+  InputForFrontManeColor2Text.addEventListener("input", updateManeColor2Text, false);
+  InputForFrontManeColor3.addEventListener("input", updateManeColor3, false);
+  InputForFrontManeColor3Text.addEventListener("input", updateManeColor3Text, false);
+  InputForFrontManeColor4.addEventListener("input", updateManeColor4, false);
+  InputForFrontManeColor4Text.addEventListener("input", updateManeColor4Text, false);
+  InputForFrontManeColor5.addEventListener("input", updateManeColor5, false);
+  InputForFrontManeColor5Text.addEventListener("input", updateManeColor5Text, false);
+}
+
+function convertURIToImageData(URI) {
+ return new Promise(function(resolve, reject) {
+ if (URI == null) return reject();
+ var canvas = document.createElement('canvas'),
+ context = canvas.getContext('2d'),
+ image = new Image();
+ image.addEventListener('load', function() {
+ canvas.width = image.width;
+ canvas.height = image.height;
+ context.drawImage(image, 0, 0, canvas.width, canvas.height);
+ resolve(context.getImageData(0, 0, canvas.width, canvas.height));
+ }, false);
+ image.src = URI;
+ });
+}
+var URI ='"&FileChooser.FileURLAt(0)&"';
+convertURIToImageData(URI).then(function(imageData) {
+ console.log(imageData);
+});
 
 document.addEventListener('DOMContentLoaded', function() {
    char.drawMyChar();
 }, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+	setInputFilter(document.querySelector("#InputForFrontManeColor1Text"), function(value) {return /^[0-9a-f]*$/i.test(value);}, "Must use hexadecimal characters");
+	ColorChangerStartup();
+	}, false);
 
 window.onscroll = function (e) { 
 		if (window.scrollY > 80) {

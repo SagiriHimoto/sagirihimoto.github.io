@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		canvas {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<canvas id="canvas" width="512" height="512"></canvas>
+
+	<script>
+		const canvas = document.getElementById('canvas');
+		const gl = canvas.getContext('webgl');
+
+		const vertexShaderSource = `
+            attribute vec2 a_position;
+            attribute vec2 a_texCoord;
+            varying vec2 v_texCoord;
+            void main() {
+                gl_Position = vec4(a_position, 0.0, 1.0);
+                v_texCoord = a_texCoord;
+            }
+        `;
+		const fragmentShaderSource = `
+            precision mediump float;
+            uniform sampler2D u_texture;
+            uniform vec3 u_replaceColor;
+            varying vec2 v_texCoord;
+            void main() {
+                vec4 texColor = texture2D(u_texture, v_texCoord);
+                if (texColor.rgb == u_replaceColor) {
+                    gl_FragColor = vec4(1.0, 0.0, 0.0, texColor.a); // with red
+                } else {
+                    gl_FragColor = texColor;
+                }
+            }
+        `;
+
+		// compile vertex
+		const vertexShader = gl.createShader(gl.VERTEX_SHADER);
+		gl.shaderSource(vertexShader, vertexShaderSource);
+		gl.compileShader(vertexShader);
+
+		// compile fragment
+		const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+		gl.shaderSource(fragmentShader, fragmentShaderSource);
+		gl.compileShader(fragmentShader);
+
+		// shader
+		const program = gl.createProgram();
+		gl.attachShader(program, vertexShader);
+		gl.attachShader(program, fragmentShader);
+		gl.linkProgram(program);
+		gl.useProgram(program);
+
+		const positionData = [
+			-0.5, -0.5,
+			0.5, -0.5,
+			-0.5, 0.5,
+			0.5, 0.5
+		];
+		const texCoordData = [
+			0.0, 1.0,
+			1.0, 1.0,
+			0.0, 0.0,
+			1.0, 0.0
+		];
+
+		// vertex buffer
+		const positionBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positionData), gl.STATIC_DRAW);
+
+		// pos buffer
+		const positionAttributeLocation = gl.getAttribLocation(program, 'a_position');
+		gl.enableVertexAttribArray(positionAttributeLocation);
+		gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+		// coord buffer
+		const texCoordBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer);
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(texCoordData), gl.STATIC_DRAW);
+
+		// link
+		const texCoordAttributeLocation = gl.getAttribLocation(program, 'a_texCoord');
+		gl.enableVertexAttribArray(texCoordAttributeLocation);
+		gl.vertexAttribPointer(texCoordAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+		// alloc
+		const texture = gl.createTexture();
+		const image = new Image();
+		image.crossOrigin = 'anonymous';
+		image.onload = function () {
+			gl.bindTexture(gl.TEXTURE_2D, texture);
+			gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+			// use NEAREST for pixwelfs <3
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+			gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+		};
+		image.src = 'https://i.imgur.com/T0zcdnD.png';
+
+		const replaceColorLocation = gl.getUniformLocation(program, 'u_replaceColor');
+		gl.uniform3fv(replaceColorLocation, [0.0, 1.0, 0.0]); // replace green
+
+		// uniform value
+		const textureLocation = gl.getUniformLocation(program, 'u_texture');
+		gl.uniform1i(textureLocation, 0);
+
+		// clear
+		gl.clearColor(0.0, 0.0, 0.0, 1.0);
+		gl.clear(gl.COLOR_BUFFER_BIT);
+
+		// draw
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+	</script>
+</body>
+
+</html>
