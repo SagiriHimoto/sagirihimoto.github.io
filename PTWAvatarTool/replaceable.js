@@ -1,1 +1,0 @@
-const avatarhtmlcode = '<div class="col-md-6"><div class="team-member"><div class="team-avatar float-left" style="background-size: 328px 246px; background-image: url(&quot;/assets/images/avatars-777434c2aa.jpg&quot;); background-position: -82px 0px;"></div><b class="text-truncate sno">Ruby</b><div class="text-muted">Project Lead</div><site-links></site-links></div></div>'
