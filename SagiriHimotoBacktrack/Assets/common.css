@@ -1,0 +1,42 @@
+:root {
+	font-family: 'Pixels';
+	color: #ffffff;
+	background-color: #000;
+	word-spacing: 3px;
+	line-height: 1.4;
+}
+
+@font-face {
+	font-family: 'Pixels';
+	src: url('https://sagirihimoto.github.io/assets/font/PonyTownFont.ttf');
+}
+
+.chatmessageclip {
+	clip-path: polygon(
+	0px var(--VarChatBox2off),
+	var(--VarChatBox1off) var(--VarChatBox2off),
+	var(--VarChatBox1off) var(--VarChatBox1off),
+	var(--VarChatBox2off) var(--VarChatBox1off),
+	var(--VarChatBox2off) 0px,
+	calc(100% - var(--VarChatBox2off)) 0px,
+	calc(100% - var(--VarChatBox2off)) var(--VarChatBox1off),
+	calc(100% - var(--VarChatBox1off)) var(--VarChatBox1off),
+	calc(100% - var(--VarChatBox1off)) var(--VarChatBox2off),
+	100% var(--VarChatBox2off),
+	100% calc(100% - var(--VarChatBox2off)),
+	calc(100% - var(--VarChatBox1off)) calc(100% - var(--VarChatBox2off)),
+	calc(100% - var(--VarChatBox1off)) calc(100% - var(--VarChatBox1off)),
+	calc(100% - var(--VarChatBox2off)) calc(100% - var(--VarChatBox1off)),
+	calc(100% - var(--VarChatBox2off)) 100%,
+	var(--VarChatBox2off) 100%,
+	var(--VarChatBox2off) calc(100% - var(--VarChatBox1off)),
+	var(--VarChatBox1off) calc(100% - var(--VarChatBox1off)),
+	var(--VarChatBox1off) calc(100% - var(--VarChatBox2off)),
+	0px calc(100% - var(--VarChatBox2off))
+	);
+	background-color: rgba(0,0,0,.7);
+	padding: var(--PolyGonpathChatMsgPadding);
+	--PolyGonpathChatMsgPadding: 6px;
+	--VarChatBox1off: 3px;
+	--VarChatBox2off: 6px;
+}
