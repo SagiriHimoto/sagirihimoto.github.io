@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mute Communication</title>
+    <style>
+		@font-face {
+			font-family: 'Born2bSportySlab';
+			src: url('https://sagirihimoto.github.io/assets/font/Born2bSportySlab.ttf');
+		}
+		
+		@font-face {
+			font-family: 'PonyTownFont';
+			src: url('https://sagirihimoto.github.io/assets/font/PonyTownFont.ttf');
+		}
+        body {
+            font-family: PonyTownFont, Born2bSportySlab, Arial, sans-serif;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			padding: 20px;
+			overflow: hidden;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 8px;
+        }
+        .output {
+			text-align: center;
+            margin-top: 70px;
+            font-size: 110px;
+			word-spacing: 25px;
+            color: #FFF;
+			text-shadow: 0px 0px 10px black,0px 0px 10px black,0px 0px 10px black,0px 0px 10px black,0px 0px 5px black,0px 0px 5px black,0px 0px 5px black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <label for="inputField">txt</label>
+    <input type="text" id="inputField">
+	<label for="wordspacing">spc</label>
+    <input type="number" value="25" min="1" id="wordspacing">
+	<label for="wordsize">szx</label>
+    <input type="number" value="110" min="1" id="wordsize">
+	<label for="imageField">img</label>
+    <input type="checkbox" id="isntcolor" name="isNotColor" checked /><input type="text" id="imageField">
+    <div class="output">
+        <span style="width:100%;" id="outputText"></span>
+    </div>
+</div>
+
+<script>
+    const inputField = document.getElementById('inputField');
+	const imageField = document.getElementById('imageField');
+	const wordsize = document.getElementById('wordsize');
+	const wordspacing = document.getElementById('wordspacing');
+    const outputText = document.getElementById('outputText');
+
+    inputField.addEventListener('input', function() {
+        outputText.textContent = inputField.value;
+    });
+	imageField.addEventListener('input', function() {
+        document.body.style.backgroundImage = "url("+imageField.value+")";
+    });
+	wordsize.addEventListener('input', function() {
+        outputText.style.fontSize = wordsize.value + "px";
+    });
+	wordspacing.addEventListener('input', function() {
+        outputText.style.wordSpacing = wordspacing.value + "px";
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sagiri Pixel Editor</title>
+	<link rel="stylesheet" href="common.css">
+</head>
+<body>
+	<div class="leftboard"><input type="text" id="textInput" oninput="handleInput(this.value)"><br/>
+	<input type="checkbox" id="flagCheckbox" onchange="toggleFlag()"><span>Update Pixel on JSON update</span><br/>
+	<input type="checkbox" id="flagCheckbox" onchange="toggleFlag()"><span>Update JSON on Pixel update</span><br/></div>
+    <canvas id="TotallyNotCanvas"></canvas>
+	<script src="javascript.js"></script>
+</body>
+</html>
