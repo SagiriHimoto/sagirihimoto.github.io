@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel Lore???</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #paper-stack {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 100px);
+            overflow: hidden;
+        }
+        
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+            overflow: auto;
+        }
+        
+        .page.active {
+            transform: translateY(0%);
+        }
+        
+        #prevBtn, #nextBtn, #pageNum {
+            position: fixed;
+            bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #prevBtn:hover, #nextBtn:hover, #pageNum:hover {
+            background-color: #0056b3;
+        }
+        
+        #prevBtn {
+            left: 20px;
+        }
+        
+        #nextBtn {
+            right: 20px;
+        }
+        
+        #pageNum {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="paper-stack">
+        <div class="page active">(might make it story sknssknsnKasnsk)<br/>**[ CHAPTER 1?]**<br/>in field of blue flowers around, one pony stumble upon jumping w/excitement throughout the fields.<br/><br/>hours passed by and tired pony lay on fields and feel the wind blew, oh its wonderful day it is on lovely sunny day<br/><br/>it was in fact her last hours to live as she spend her last moment in field, she didnt bring any friends you might ask? well that makes everypony treats her different.<br/><img src="https://cdn.discordapp.com/attachments/1008273310943023164/1243903311690596402/images.jpg?ex=66532abc&is=6651d93c&hm=da17da5b725bac8676bdec6f2658cc5e6372551b83793c216668e14593616659"></img><br/>she didnt tell her illness to anypony or what cause to this, only the doctor who check up on her that she only has days to live and here we are now.<br/><br/>she thinks nothing but only wishing that she lived more in this world and well i deserve it too that they wont see me anymore-<br/><br/>suddenly her heart starts to sink in pain, agony within her shaken as she starts to call for help "what are you even doing nopony would come and help you in this field, scream all you want"<br/>lay upon on the fields shaken and trembles through her heart as starts getting worst from its pain<br/><br/>**it hurts it HURTS IT HURTS IT HURTS IT HURTS IT HURTS-**<br/>in field of blue flowers around, one pony stumble upon as last breath away through wind blew along w/blue flowers around her</div>
+        <div class="page">[CHAPTER 2?]<br/><br/>thats it right? just a pony who diddle dawdling around the fields and just die there, nothing special about it until one pony show up.<br/><br/>in field of blue flowers around, one pony stumble upon on corpse, how disgusting it is thats it been rotten only to see the remaining bones and heart is unrotten (?) weirdly to see the heart is squish and unrotten most likely alive.<br/><br/>that pony took the remainings of corpse and headed to near cabin, putting in metal bed and inspect the corpse and heart likely small beating.<br/><br/>Unbelievable! he said<br/>I never seen such corpse rotten that heart still fresh and lively, well uhhh still beating slow but i'll figure this one out!<br/><br/>this pony sure is suffering alot but the help of your heart and my magic i do my best to ressurect you w/new version of you! holding the heart along w/warmth hug starts to beating<br/><br/>years later the magician pony is almost finishing making the body out of plush-<br/>why the body out of plush you might ask? doc loves plushies (he had ton of plushies around the house)<br/><br/>dont you worry now hun! you'll soon gonna love your new body, heart listen carefully as it beats.<br/>it may not be goodlooking but i did add my magic along w/this ink ive made! its called magic ink!! this will control your body and body and throughout the system of your body as blah blah blahablhablahblablablhah-<br/>the heart couldnt catch up a phrase on what she just sense to doc<br/>few days by as the heart now installed to its new body, ink inside of it starts to squirm as it starts to move-<br/>as it open my eyes, i look around and saw the pony who created me.<br/>I-It work **oh my galactia stars iT WORKS!!!**</div>
+        <div class="page">Ummmm, hiii</div>
+        <div class="page">I LUV U!!! <3</div>
+    </div>
+    <button id="prevBtn"><----</button>
+    <span id="pageNum">Page 1</span>
+    <button id="nextBtn">----></button>
+
+    <script>
+        const pages = document.querySelectorAll('.page');
+        let currentPage = 0;
+        const pageNum = document.getElementById('pageNum');
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentPage > 0) {
+                pages[currentPage].classList.remove('active');
+                currentPage--;
+                pages[currentPage].classList.add('active');
+                pageNum.textContent = `Page ${currentPage + 1}`;
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                pages[currentPage].classList.remove('active');
+                currentPage++;
+                pages[currentPage].classList.add('active');
+                pageNum.textContent = `Page ${currentPage + 1}`;
+            }
+        });
+    </script>
+</body>
+</html>
