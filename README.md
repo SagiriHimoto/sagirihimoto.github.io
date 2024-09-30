@@ -1,2 +1,2 @@
 # sagirihimoto.github.io
-Amateur website
+(this isn't a serious proj, it's just a code dump)

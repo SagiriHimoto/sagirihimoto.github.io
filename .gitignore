@@ -5,6 +5,7 @@
 /Templates.js
 /.vs
 /.git
+/.idea
 node_modules
 sagirihimoto.github.io/Gemfile.lock
 sagirihimoto.github.io/about.markdown
