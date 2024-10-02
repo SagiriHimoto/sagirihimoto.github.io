@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+<title>HW 3.1</title>
+<style>
+body{
+font-family:Arial, sans-serif;
+background-color:#f9f9f9;
+padding: 10px;}
+.container{
+text-align:center;
+margin:auto;
+background-color:transparent;}
+h1{
+margin-bottom:20px;
+font-size:24px;
+color:#333;}
+.gridthingy{
+display:flex;
+flex-wrap:nowrap;
+justify-content:space-between;
+gap:10px;}
+.thethingy{
+flex-basis:26%;
+padding:10px;
+flex-grow:4;
+aspect-ratio: 1 / 1 ;
+border:1px solid transparent;
+border-radius:3px;
+transition:0.5s;
+background-color:rgb(22 69 122);}
+.thethingy:hover{
+background-color:#ddd;
+transition:0.5s;}
+.thethingy p{
+font-size:16px;}
+p {
+color:#fff;
+position:relative;
+top:35%;}
+.widgetsthingy{
+aspect-ratio: 3 / 1;
+background-color:rgb(33 106 187);
+margin:10px 0px 10px 0px;
+border-radius:3px;}
+.contactthingy{
+aspect-ratio: 6 / 1;}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="widgetsthingy">
+<p>Widgets</p>
+</div>
+<div class="gridthingy">
+<div class="thethingy">
+<p>Big Widgets</p>
+</div>
+<div class="thethingy">
+<p>Bigger Widgets</p>
+</div>
+<div class="thethingy">
+<p>Huge Widgets</p>
+</div>
+</div>
+<div class="widgetsthingy">
+<p>Contact</p>
+</div>
+</div>
+</body>
+</html>
