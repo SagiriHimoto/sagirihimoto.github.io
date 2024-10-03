@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+/* ---------------------- header ------------------------- */
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Orbitron", sans-serif;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgb(77, 76, 76);
+    font-size: 18px;
+
+}
+header div{
+    text-align: center;
+}
+
+.active-link{
+    color: rgb(9, 38, 9);
+}
+/* ------------------main---------- */
+.main__home{
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1494825514961-674db1ac2700?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    font-family: "Orbitron", sans-serif;
+}
+.main__home p{
+    font-size: 20px;
+	text-shadow:0px 0px 2px white,0px 0px 2px white,0px 0px 2px white,0px 0px 2px white,0px 0px 2px white,0px 0px 2px white,0px 0px 2px white;
+	/* ^^^^ THIS IS 100% INTENTIONAL!!!!!!!!!!!!!!!!!!!!!! */
+}
+.main__home h1{
+    font-size: 100px;
+    letter-spacing: 40px;
+}
+button{
+    margin-top: 30px;
+    height: 40px;
+    width: 140px;
+    border: none;
+    color: white;
+    background-color: black;
+	transition: 0.2s;
+}
+button:hover{
+    margin-top: 30px;
+    height: 40px;
+    width: 140px;
+    border: none;
+    color: white;
+    background-color: #333;
+	transition: 0.2s;
+}
+.slideright{text-align:right;left:30vh;}
+.slideleft{text-align:left;right:30vh;}
+.r{position:relative;}
+.containerABC{width:40vw;}
+.flexABC{display:flex;flex-wrap:wrap;}
+.itemABC{width:55vw;height:150px;display:block;background-color:#000000aa;padding:40px;}
+.thumb{float:right;background-image:url('https://thumbs.dreamstime.com/z/poster-advertising-business-coaching-courses-professional-growth-promotion-invitation-financial-tutoring-cartoon-classroom-176419746.jpg');height:150px;aspect-ratio:1/1;background-size:contain;background-repeat:no-repeat;}
