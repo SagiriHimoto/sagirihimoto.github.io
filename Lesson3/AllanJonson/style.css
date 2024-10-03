@@ -61,6 +61,7 @@ button{
     color: white;
     background-color: black;
 	transition: 0.2s;
+	border-radius:5px;
 }
 button:hover{
     margin-top: 30px;
@@ -76,5 +77,5 @@ button:hover{
 .r{position:relative;}
 .containerABC{width:40vw;}
 .flexABC{display:flex;flex-wrap:wrap;}
-.itemABC{width:55vw;height:150px;display:block;background-color:#000000aa;padding:40px;}
-.thumb{float:right;background-image:url('https://thumbs.dreamstime.com/z/poster-advertising-business-coaching-courses-professional-growth-promotion-invitation-financial-tutoring-cartoon-classroom-176419746.jpg');height:150px;aspect-ratio:1/1;background-size:contain;background-repeat:no-repeat;}
+.itemABC{width:55vw;border-radius:5px;height:150px;display:block;background-color:#000000aa;padding:40px;}
+.thumb{float:right;border-radius:5px;background-image:url('https://thumbs.dreamstime.com/z/poster-advertising-business-coaching-courses-professional-growth-promotion-invitation-financial-tutoring-cartoon-classroom-176419746.jpg');height:150px;aspect-ratio:1/1;background-size:contain;background-repeat:no-repeat;}
