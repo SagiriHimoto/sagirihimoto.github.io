@@ -72,10 +72,32 @@ button:hover{
     background-color: #333;
 	transition: 0.2s;
 }
-.slideright{text-align:right;left:30vh;}
-.slideleft{text-align:left;right:30vh;}
-.r{position:relative;}
-.containerABC{width:40vw;}
-.flexABC{display:flex;flex-wrap:wrap;gap:15px;}
-.itemABC{width:55vw;border-radius:5px;height:100px;display:block;background-color:#000000aa;padding:40px;}
-.thumb{float:right;border-radius:5px;background-image:url('https://thumbs.dreamstime.com/z/poster-advertising-business-coaching-courses-professional-growth-promotion-invitation-financial-tutoring-cartoon-classroom-176419746.jpg');height:100px;aspect-ratio:1/1;background-size:contain;background-repeat:no-repeat;}
+.slideright{
+	text-align:right;
+	left:30vh;}
+.slideleft{
+	text-align:left;
+	right:30vh;}
+.r{
+	position:relative;}
+.containerABC{
+	width:40vw;}
+.flexABC{
+	display:flex;
+	flex-wrap:wrap;
+	gap:15px;}
+.itemABC{
+	width:55vw;
+	border-radius:5px;
+	height:100px;
+	display:block;
+	background-color:#000000aa;
+	padding:40px;}
+.thumb{
+	float:right;
+	border-radius:5px;
+	background-image:url('https://thumbs.dreamstime.com/z/poster-advertising-business-coaching-courses-professional-growth-promotion-invitation-financial-tutoring-cartoon-classroom-176419746.jpg');
+	height:100px;
+	aspect-ratio:1/1;
+	background-size:contain;
+	background-repeat:no-repeat;}
