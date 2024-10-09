@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+<title>5.1 (1)</title>
+<style>
+body{
+margin:0;
+padding:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+box-sizing:border-box;
+background-color:#f0f0f0;}
+#theGutsOfThePage{
+display:none;}
+#preloader{
+position:absolute;
+display:flex;
+justify-content:center;
+align-items:center;
+background-color:#fff;}
+canvas{
+display:block;}
+</style>
+</head>
+<body>
+<div id="preloader">
+<canvas id="preloaderCanvas" width="150" height="150"></canvas>
+</div>
+<div id="theGutsOfThePage">
+<h1>Header bla bla bla</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam odio, volutpat vel sollicitudin at, pellentesque sit amet ligula. Morbi venenatis sit amet magna vel feugiat. Sed ac tincidunt dui. Integer ullamcorper tellus ut justo facilisis molestie. Praesent accumsan sollicitudin vulputate. Phasellus diam massa, lobortis sit amet euismod quis, sagittis vel tellus. Cras facilisis eget odio eget volutpat.<br/><br/>Nullam pulvinar sagittis sodales. Etiam pulvinar, diam vitae faucibus euismod, orci justo consequat ante, ac imperdiet diam neque at nunc. Phasellus ultricies sapien sit amet dolor cursus maximus. Nulla sapien lacus, tempor in vestibulum at, tincidunt et arcu. Aliquam in massa eget dui iaculis imperdiet nec eget est. Nam mi erat, lobortis at nibh vel, rhoncus tempor metus. Vestibulum ipsum felis, tristique ac blandit eu, volutpat vel lorem. Vestibulum eu ante vehicula, laoreet tellus non, vehicula enim.<br/><br/>Donec euismod at sapien in vehicula. Vivamus vel dignissim metus, a cursus lectus. Aenean ornare iaculis dui sed ultricies. Integer in ligula dolor. Morbi fermentum pretium justo vel tincidunt. Aliquam urna nibh, bibendum vitae sem ac, cursus dictum magna. Praesent iaculis ligula a hendrerit vehicula. Nunc vestibulum facilisis ornare.<br/><br/>Donec dictum, ex ac feugiat consectetur, quam urna imperdiet arcu, sed feugiat nisi nunc quis ex. Sed sit amet ullamcorper purus, nec dictum nulla. Pellentesque faucibus consectetur turpis, et consectetur justo dictum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras a tincidunt nisl, a sollicitudin nulla. Nullam eros libero, pretium nec maximus sed, euismod at tortor. Phasellus fringilla imperdiet mollis. Quisque auctor at dolor sit amet consectetur. Nullam a sagittis mi. Vestibulum congue, nunc ut euismod rutrum, eros dolor lacinia est, non rutrum nisl felis vel quam. Suspendisse eu dolor et mi dignissim scelerisque porttitor sed massa. Sed ultricies pretium nunc maximus aliquam. Curabitur neque libero, viverra a molestie et, lobortis non tellus. Donec viverra enim sapien, nec interdum erat gravida id.<br/><br/>Aenean ut dolor turpis. Donec et tempor enim. Aliquam a elit sed odio mattis commodo. Sed consequat arcu libero, sit amet lobortis urna rhoncus a. Nulla in purus aliquam nisi mollis feugiat. Vestibulum eget quam sed ligula ultricies gravida non vel velit. Pellentesque accumsan elementum orci egestas gravida. Vestibulum dapibus pellentesque purus, ac interdum arcu maximus at. Proin dapibus sem metus, eu condimentum ligula maximus et. Nunc et hendrerit odio, ac ornare turpis. Etiam magna dui, pulvinar eget urna quis, malesuada elementum dolor. In volutpat ex nec justo fringilla, et ullamcorper dui consectetur. Etiam fringilla nunc non velit finibus dignissim. Maecenas sagittis nisl vitae justo consequat, ac lacinia massa tincidunt.</p>
+</div>
+<script>
+const canvas = document.getElementById('preloaderCanvas');
+const ctx = canvas.getContext('2d');
+let angle = 0;
+function drawPreloader(){
+ctx.fillStyle = '#f0f0f0';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.beginPath();
+ctx.arc(75, 75, 50, angle, angle + Math.PI * 1.5);
+ctx.strokeStyle = '#000';
+ctx.lineWidth = 10;
+ctx.stroke();
+angle += 0.05;
+}
+const preloaderInterval = setInterval(drawPreloader, 16);
+window.onload = function(){
+setTimeout(() =>{
+clearInterval(preloaderInterval);
+document.getElementById('preloader').style.display = 'none';
+document.getElementById('theGutsOfThePage').style.display = 'block';
+}, 2000);  // The delay is fake, yes, but what isn't fake these days?
+}
+</script>
+</body>
+</html>
