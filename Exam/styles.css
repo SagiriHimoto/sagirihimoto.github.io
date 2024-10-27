@@ -1,0 +1,238 @@
+		:root{
+			--annoying-orange: #ff7315;
+			--less-annoying-orange: #ff9b70;
+			--bland-gray: #e4dfdd;
+		}
+		body{
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf9f7;
+        }
+        h1, h2, h4{
+            font-weight: bold;
+        }
+        .the-man{
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 40px;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: center;
+			gap: 20px;
+			flex-wrap: wrap;
+        }
+		.btn-outline-danger{
+			
+		}
+		.the-man50{
+			width:50vw;
+		}
+		.smallerman{
+			width: 50%;
+			text-align: left;
+		}
+		.smallermanimg{
+			min-width: 350px;
+			max-width: 450px;
+			height: auto;
+			margin: auto;
+		}
+		.smallermantext{
+			margin-left:40px;
+		}
+		.smallerman p{
+			font-size: 22px !important;
+		}
+		.man50fl{
+			display:flex;
+			flex-wrap: wrap;
+		}
+        .the-man img{
+            border-radius: 50%;
+            width: 350px;
+            height: 350px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+			flex-shrink: 0;
+			flex-grow: 0;
+			object-fit: cover;
+        }
+        .the-man h1{
+            font-size: 36px;
+            margin-top: 20px;
+			width: 75%;
+			text-align: left;
+        }
+        .the-man p{
+            color: #999;
+            font-size: 16px;
+            max-width: 600px;
+			text-align: left;
+        }
+        .btn-custom{
+            font-size: 14px;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 7px;
+			margin: 10px 10px 10px 0px;
+			float: left;
+			max-height:45px;
+        }
+		.btn-twi-socials{
+			--twi-size: 45px;
+			padding:10px;
+			border-radius: 50%;
+			background-color: var(--bg);
+			color: #fff;
+			font-size: 20px;
+			width: var(--twi-size);
+			height: var(--twi-size);
+		}
+		.skill-icon{
+			width: 80px;
+			height: 80px;
+			margin: 40px auto;
+		}
+		.skill-icon img{
+			width: 55px;
+			height: 55px;
+			margin: auto;
+		}
+		.btn-twi-socials i{
+			vertical-align: 10%;
+		}
+        .orange-section{
+            background-color: var(--annoying-orange);
+            color: white;
+            padding: 60px 30px 60px 0px;
+            text-align: center;
+            border-radius: 15px;
+			margin: 0px 7vw 0px 7vw;
+        }
+        .orange-section h2{
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .orange-section p{
+            font-size: 18px;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+        .skills-section h2{
+            margin-bottom: 30px;
+        }
+        .skill-card{
+            text-align: center;
+            padding: 20px;
+        }
+		.skill-card p{
+			color: #888;
+			max-width: 60vw;
+			margin: 0px auto;
+		}
+		.portfoliodiv img{
+            width: 300px;
+			height: 300px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+			object-fit: cover;
+        }
+		.container h2{
+			margin: 10px auto 40px auto;
+			text-align: center;
+		}
+        .portfoliodiv img:hover{
+            transform: scale(1.02);
+        }
+        .testimonials-section{
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #ff8c42;
+            color: white;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .btn-email{
+            background-color: white;
+            color: #000;
+            font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 30px;
+        }
+		.includedstuff{
+			color: #000;
+		}
+		.includedstuff i{
+			color: var(--annoying-orange);
+		}
+		.pricecardpadding{
+			padding: 20px 50px 0px 50px;
+			word-spacing: 2px;
+		}
+		.loved{
+			width: 100%;
+			border-radius: 0px;
+			margin: 0px;
+			padding: 20px 60px;
+		}
+		.emailme{
+			padding: 50px;
+			flex-wrap: wrap;
+		}
+		.emailme h2{
+			max-width: 50%;
+			text-align: left;
+		}
+		.emailme button{
+			height: 55px;
+			border-radius: 10px;
+			margin: auto 20px auto 0px;
+		}
+		.card-body img{
+			width: 100%;
+			margin-bottom: 15px;
+			border-radius: 5px;
+		}
+		.card-body p{
+			color: #999;
+		}
+		.card{
+			--bs-card-border-color: #00000000;
+			box-shadow: 0px 0px 5px 0px #ccc;
+			margin-top: 40px;
+			transition: 0.2s;
+		}
+		.card .card-title{
+			font-size:16px;
+			font-weight: bold;
+		}
+		.card .card-text{
+			font-size:14px;
+			font-weight: bold;
+		}
+		.card-body{
+			padding-bottom: 60px;
+			font-weight: bold;
+		}
+		.card .card-header{
+			font-weight: bold;
+			text-align: center;
+			background-color: var(--less-annoying-orange);
+			color: #fff;
+			border: none;
+			box-shadow: 0px 0px 3px 0px #444, 0px 6px 6px -7px #444;
+			transition: 0.2s;
+			margin-bottom: 40px;
+		}
+		.card:hover .card-header{
+			background-color: var(--annoying-orange);
+			transition: 0.2s;
+		}
+        .card:hover{
+            transform: scale(1.02);
+        }
+        footer{
+            text-align: center;
+            padding: 20px;
+            background-color: #ddd;
+            color: #555;
+        }
