@@ -1,0 +1,16 @@
+<textarea id="topDisplay" readonly></textarea>
+<textarea id="bottomDisplay" readonly></textarea>
+<script type="text/javascript" src="calc.js"></script>
+<div>
+  <button onclick="setValue(1)">1</button>
+  <button onclick="setValue(2)">2</button>
+  <button onclick="setValue(3)">3</button>
+  <button onclick="setOperator('add')">+</button>
+  <button onclick="setOperator('subtract')">-</button>
+  <button onclick="setOperator('multiply')">x</button>
+  <button onclick="setOperator('divide')">/</button>
+  <button onclick="setOperator('sqrt')">√</button>
+  <button onclick="evaluateCurrentOperation()">=</button>
+  <button onclick="handleBackspace()">←</button>
+  <button onclick="resetCalculator()">C</button>
+</div>

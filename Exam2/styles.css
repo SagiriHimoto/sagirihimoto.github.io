@@ -1,0 +1,108 @@
+:root{
+	--darkest-color:#ccc;
+	--dark-color:#ddd;
+	--bg-color:#fff;
+	--text-color:#000;
+	transition:0.5s;
+}
+
+.rmvButtons{
+	width:130px;
+}
+.outputResult{
+	resize:none;
+	color:var(--text-color);
+	font-size:20px;
+	width:95%;
+	background-color:var(--bg-color);
+	min-height:300px;
+	border:2px #000 inset;
+	user-select: none;
+}
+.outputResult p{
+	margin:0px;
+	padding-left:5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	user-select: all;
+}
+.inputStuff{
+	width:95%;
+}
+textarea.rmvButtons{
+	padding:0px;
+	border:0px;
+}
+body{
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:row-reverse;
+	justify-content:center;
+	padding-top:40px;
+	margin:0px;
+	background-color:var(--bg-color);
+	color:var(--text-color);
+}
+button{
+	color:var(--text-color);
+	background-color:var(--bg-color);
+}
+select{
+	color:var(--text-color);
+	background-color:var(--bg-color);
+}
+input{
+	color:var(--text-color);
+	background-color:var(--bg-color);
+}
+#toaster{
+	position:fixed;
+	top:-60px;
+	transition:1s;
+	box-shadow:var(--darkest-color) 0px 0px 5px 10px;
+    background:var(--darkest-color);
+}
+.btm5{
+	margin-bottom:5px;
+}
+.addsomepadding{
+	padding:10px;
+}
+.cntainr{
+		width:60vw;
+		padding:20px 0px 80px 0px;
+		background-color:var(--dark-color);
+		display:flex;
+		align-items:center;
+		flex-direction:column;
+}
+.cntainr2{
+		width:20vw;
+		padding:20px;
+		background-color:var(--dark-color);
+}
+/* For smol screen users */
+@media (max-width:800px){
+	body{
+		padding:0px;
+		margin:0px;
+		flex-direction:column;
+	}
+	.cntainr{
+		width:100%;
+		align-items:start;
+	}
+	.cntainr2{
+		width:calc(100% - 40px);
+		padding-bottom:0px;
+	}
+	.namesakes{
+		display:none;
+	}
+	.outputResult{
+		width:calc(100% - 4px);
+	}
+	.inputStuff{
+		width:calc(100% - 8px);
+	}
+}

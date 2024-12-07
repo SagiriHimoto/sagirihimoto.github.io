@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Typewriter</title><style>
+body { width:100%;margin: 0; background-color:#333;}
+.textgoeshere { padding:30px;display:flex; flex-wrap:wrap; justify-content:flex-start;flex-direction:row;}
+img{image-rendering: pixelated;object-fit: none;height:30px;width:24px;}
+.break {flex-basis: 100%;height: 0px;}
+.break + .break {flex-basis: 100%;height: 30px;}
+.break.beforecursor + .break.aftercursor {height:0px;}
+<!-- .break.aftercursor + .break.aftercursor {display:inline;} -->
+.aftercursor{order:3;}
+#debugMenu{z-index:99;position:fixed;top:-60px;clip-path: polygon(0px 0px,100% 0px,100% var(--VarChatBox2off),100% calc(100% - var(--VarChatBox2off)),calc(100% - var(--VarChatBox1off)) calc(100% - var(--VarChatBox2off)),calc(100% - var(--VarChatBox1off)) calc(100% - var(--VarChatBox1off)),calc(100% - var(--VarChatBox2off)) calc(100% - var(--VarChatBox1off)),calc(100% - var(--VarChatBox2off)) 100%,var(--VarChatBox2off) 100%,var(--VarChatBox2off) calc(100% - var(--VarChatBox1off)),var(--VarChatBox1off) calc(100% - var(--VarChatBox1off)),var(--VarChatBox1off) calc(100% - var(--VarChatBox2off)),0px calc(100% - var(--VarChatBox2off)));height:60px;width:50vw;left:25vw;background:#222222bb;display:flex;transition:0.2s;--VarChatBox1off:6px;--VarChatBox2off:12px;align-items:center;justify-content:center;gap:6px;}
+.debugIcons{width:48px;height:48px;transition:0.1s;}
+.debugIcons:hover{filter:drop-shadow(0px 0px 3px black);transform:scale(1.05);}
+.italicizer{}
+.italicizer + .symbol {transform: skew(-15deg, 0deg);}
+.italicizer + .italicizer {object-position:-24px -90px !important; width:36px !important;transform: skew(0deg, 0deg);}
+.cursor {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+animation: blink-animation 0.5s steps(2, start) infinite;
+-webkit-animation: blink-animation 0.5s steps(2, start) infinite;
+object-position: -0px -90px;
+width: 15px;
+order: 2;
+}
+@keyframes blink-animation {
+to {
+visibility: hidden;
+}
+}
+@-webkit-keyframes blink-animation {
+to {
+visibility: hidden;
+}
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+<audio id="clickclackbeat" src="Beat.wav"></audio>
+<div id="debugMenu"><img draggable="false" class="debugIcons" onclick="addItalicizer()" src="debugButtons.png" style="object-position:0px 0px;"><img draggable="false" class="debugIcons" src="debugButtons.png" style="object-position:-48px 0px;"></div>
+<div id="textgoeshere" class="textgoeshere"><img draggable="false" id="cursor" class="cursor" src='font.png' /></div>
+<script src="typewriter.js"></script>
+<div id="emptyspace" style="height:30vh; width:100%;"></div>
+</body>
+</html>

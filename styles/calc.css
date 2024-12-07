@@ -1,0 +1,21 @@
+@media screen and (orientation:portrait) {
+	.leftpane{
+		display:none;
+	}
+	.rightpane{
+		width: 100vw;
+	}
+}
+@media screen and (orientation:landscape) {
+	.rightpane{
+		width: 50vw;
+	}
+}
+.leftpane{background-color:#333;height:100%;width:50vw;}
+.rightpane{background-color:#111;height:100%;}
+.fullwindow{overflow:hidden;}
+textarea{resize:none;background-color:#222;border:none;font-size:44px;font-weight:bold;color:#fff;text-align:right;padding-top:10px;padding-right:5px;}
+.calcbuttons{flex-grow:1;flex-shrink:0;min-width:12.5vw;max-height:15vh;padding:0px;border:none;border-radius:0px;display:flex;justify-content:center;align-items:center;font-size:34px;font-weight:bold;}
+.orangebg{background-color:orange;}
+.greybg{background-color:#444;color:#fff;}
+.btn:hover{color:white;}
