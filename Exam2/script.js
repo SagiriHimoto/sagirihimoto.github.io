@@ -14,7 +14,7 @@ var FocusInput = true;
 /* This works as mobile css */
 const EvilListOfEvil = [/Android/i,/iPhone/i,/iPad/i,/iPod/i,/BlackBerry/i,/Windows Phone/i,/webOS/i];
 function CheckUserAgentOrWindowSize() {
-    if(visualViewport.width < visualViewport.height || EvilListOfEvil.some((ItemFromEvilListOfEvil) => {return navigator.userAgent.match(ItemFromEvilListOfEvil);})) {
+    if(visualViewport.width < visualViewport.height+200 || EvilListOfEvil.some((ItemFromEvilListOfEvil) => {return navigator.userAgent.match(ItemFromEvilListOfEvil);})) {
 		if(DebugMode){
 			console.log("Phone! Screen Resized ",visualViewport.width,"x",visualViewport.height)
 			document.documentElement.style.setProperty('--body-padding', '0px')
@@ -42,6 +42,7 @@ function CheckUserAgentOrWindowSize() {
 		}
 	}
 }
+CheckUserAgentOrWindowSize()
 window.onresize = CheckUserAgentOrWindowSize
 
 function ToggleDebugMode() {
