@@ -6,9 +6,8 @@ const SortSelector = document.getElementById("SortSelect");
 /* chars value is used as a pool of characters when making random entries by pressing F8 */
 var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var BiggyListyThingy = [];
-var DebugMode = true;
+var DebugMode = false;
 var ThemeMode = false;
-var CursorPos = 0;
 var FocusInput = true;
 
 /* This works as mobile css */
@@ -152,17 +151,22 @@ function RedrawTextArea() {
 /* Checks if add button was pressed, duh */
 AddButton.addEventListener("click", () => {
 	if (KeyInput.value.indexOf("=") == -1) {
-		if (document.getElementById("AddEqual").checked) {KeyInput.value += "="} else
+		if (document.getElementById("AddEqual").checked && KeyInput.value != "") {KeyInput.value += "="} else
 		{if (DebugMode) {console.log("Value has no = sign, returned as error")}}
 		return;
 	}
 	let key = KeyInput.value.split("=")[0].trim();
 	let value = KeyInput.value.split("=")[1].trim();
 	let newEntry = { Key: key,Value: value };
+	if(key!="" && value!=""){
 	BiggyListyThingy.push(newEntry);
 	RedrawTextArea();
 	KeyInput.value = "";
 	KeyInput.focus();
+	/* only runs if user added at least a single symbol besides an equal sign */
+	}else{
+		return;
+	}
 });
 KeyInput.addEventListener("focusin", (event) => {FocusInput = true;if(DebugMode){console.log("Currently inputing")}});
 KeyInput.addEventListener("focusout", (event) => {FocusInput = false;if(DebugMode){console.log("No longer inputing")}});
