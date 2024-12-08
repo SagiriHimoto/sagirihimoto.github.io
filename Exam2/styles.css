@@ -28,6 +28,12 @@
 }
 .inputStuff{
 	width:95%;
+	color:#666;
+	transition:0.1s;
+	font-weight: bolder;
+}
+.inputStuff:focus{
+	color:#000;
 }
 textarea.rmvButtons{
 	padding:0px;
@@ -82,7 +88,8 @@ input{
 		background-color:var(--dark-color);
 }
 /* For smol screen users */
-@media (max-width:800px){
+/* a bit big, because my phone's screen is chonky and I need to account for big phones too*/
+@media (max-width:900px){
 	body{
 		padding:0px;
 		margin:0px;
