@@ -77,22 +77,28 @@ function RemoveSelected() {
 	let ErasedAmount = 0;
 	/* ^ This is here to avoid this function deleting an entry and skipping the next one because of out of sync indexing */
 	for (let i=1;i<=ResultTextArea.childElementCount;i++) {
-		if (DebugMode) {console.log("Child" + i + "is" +window.getSelection().containsNode(document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")"), true))}
+		if (DebugMode) {console.log("Child " + i + " is " +window.getSelection().containsNode(document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")"), true))}
 		if (window.getSelection().containsNode(document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")"))){
 			BiggyListyThingy.splice(i-ErasedAmount-1,1);
 			ErasedAmount++;
-			event.preventDefault()
+			if(event.type=="keydown"){event.preventDefault()}
 		} else if (window.getSelection().anchorNode.data == document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")").innerText){
+			/* checks anchor node */
 			if (window.getSelection().anchorOffset != window.getSelection().anchorNode.data.length) {BiggyListyThingy.splice(i-ErasedAmount-1,1)
+				/* checks anchor offset. to prevent it from deleting stuff that was selected by clicking on body */
 			ErasedAmount++;
-			event.preventDefault()}
+			if(event.type=="keydown"){event.preventDefault()}}
 		} else if (window.getSelection().focusNode.data == document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")").innerText){
+			/* checks focus node */
 			if (window.getSelection().focusOffset != window.getSelection().focusNode.data.length) {BiggyListyThingy.splice(i-ErasedAmount-1,1)
+				/* checks focus offset. to prevent it from deleting stuff that was selected by clicking on body */
 			ErasedAmount++;
-			event.preventDefault()}
-			/* preventDefault() doesn't do anything when triggered by button,so conditioning is not needed */
+			if(event.type=="keydown"){event.preventDefault()}}
+			/* preventDefault() is only relevant when this code is called by an event type of Keydown (Backspace) */
 		}
 	}
+	if(event.type=="keydown"){if(ErasedAmount==0){RemoveLast()}}else{if(DebugMode){console.log("Doesn't remove last when triggered by anything other than a keydown event (Backspace)")}};
+	console.log(event.type)/* If user doesn't select anything, remove last */
 	RedrawTextArea()
 }
 /* Removes the first Key and Value in array */
@@ -141,7 +147,7 @@ function RedrawTextArea() {
 	formattedOutput = "[" + SortedBiggyListyThingy.map(entry => `{Key: ${Object.values(entry)[0]}, Value: ${Object.values(entry)[1]}}`).join(",\n") + "]";
 	break;
 	}
-	ResultTextArea.innerText = '';
+	ResultTextArea.innerHTML = '';
 	for(let i=0;i < formattedOutput.split("\n").length;i++){
 		ResultTextArea.innerHTML += "<p>" + formattedOutput.split("\n")[i].replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;') + "</p>";/* This is done a separate step from join(), to prevent a bug with "Raw" display's square bracket apearing outside the paragraph. Paragraph tag opener could be placed in the previous step, but for consistency and more intuitive coding, I chose not to */
 	}
