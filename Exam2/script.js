@@ -11,6 +11,39 @@ var ThemeMode = false;
 var CursorPos = 0;
 var FocusInput = true;
 
+/* This works as mobile css */
+const EvilListOfEvil = [/Android/i,/iPhone/i,/iPad/i,/iPod/i,/BlackBerry/i,/Windows Phone/i,/webOS/i];
+function CheckUserAgentOrWindowSize() {
+    if(visualViewport.width < visualViewport.height || EvilListOfEvil.some((ItemFromEvilListOfEvil) => {return navigator.userAgent.match(ItemFromEvilListOfEvil);})) {
+		if(DebugMode){
+			console.log("Phone! Screen Resized ",visualViewport.width,"x",visualViewport.height)
+			document.documentElement.style.setProperty('--body-padding', '0px')
+			document.documentElement.style.setProperty('--body-row-direction', 'column')
+			document.documentElement.style.setProperty('--cntainr-width', '100%')
+			document.documentElement.style.setProperty('--cntainr-align-items', 'start')
+			document.documentElement.style.setProperty('--cntainr2-width', 'calc(100% - 40px)')
+			document.documentElement.style.setProperty('--cntainr2-padding-bottom', '0px')
+			document.documentElement.style.setProperty('--namesakes-display', 'none')
+			document.documentElement.style.setProperty('--outputresult-width', 'calc(100% - 4px)')
+			document.documentElement.style.setProperty('--inputstuff-width', 'calc(100% - 8px)')
+		}
+	} else {
+		if(DebugMode){
+			console.log("Desktop! Screen Resized ",visualViewport.width,"x",visualViewport.height)
+			document.documentElement.style.setProperty('--body-padding', '40px')
+			document.documentElement.style.setProperty('--body-row-direction', 'row-reverse')
+			document.documentElement.style.setProperty('--cntainr-width', '60vw')
+			document.documentElement.style.setProperty('--cntainr-align-items', 'center')
+			document.documentElement.style.setProperty('--cntainr2-width', '20w')
+			document.documentElement.style.setProperty('--cntainr2-padding-bottom', '20px')
+			document.documentElement.style.setProperty('--namesakes-display', 'block')
+			document.documentElement.style.setProperty('--outputresult-width', '95%')
+			document.documentElement.style.setProperty('--inputstuff-width', '95%')
+		}
+	}
+}
+window.onresize = CheckUserAgentOrWindowSize
+
 function ToggleDebugMode() {
 	if (DebugMode) {
 		DebugMode = false;
@@ -111,8 +144,6 @@ function RedrawTextArea() {
 	ResultTextArea.innerText = '';
 	for(let i=0;i < formattedOutput.split("\n").length;i++){
 		ResultTextArea.innerHTML += "<p>" + formattedOutput.split("\n")[i].replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;') + "</p>";/* This is done a separate step from join(), to prevent a bug with "Raw" display's square bracket apearing outside the paragraph. Paragraph tag opener could be placed in the previous step, but for consistency and more intuitive coding, I chose not to */
-		/* This function also uses ReplaceAll() to escape characters that could be perceived as html. This function is supported on ALL modern browsers. If this project was bigger scale, I would implement a fallback. But for a small project like this, with no expectations of compatibility with outdated browser versions, this implementation is perfect */
-		/* the order is a bit specific. you need to replace all "&" symbols first, because every other escape character contains it, and replacing it later, will cause trouble */
 	}
 	if (DebugMode) {console.log(formattedOutput)}
 	ResultTextArea.style.height = ResultTextArea.scrollHeight - 4 + "px";
