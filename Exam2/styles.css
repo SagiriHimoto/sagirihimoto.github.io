@@ -99,3 +99,28 @@ input{
 .namesakes{
 	display:var(--namesakes-display); 
 }
+/* Fallback CSS implementation of mobile styles */
+@media (max-width:900px){
+	body{
+		padding:0px;
+		margin:0px;
+		flex-direction:column;
+	}
+	.cntainr{
+		width:100%;
+		align-items:start;
+	}
+	.cntainr2{
+		width:calc(100% - 40px);
+		padding-bottom:0px;
+	}
+	.namesakes{
+		display:none;
+	}
+	.outputResult{
+		width:calc(100% - 4px);
+	}
+	.inputStuff{
+		width:calc(100% - 8px);
+	}
+}
