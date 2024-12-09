@@ -16,30 +16,30 @@ function CheckUserAgentOrWindowSize() {
     if(EvilListOfEvil.some((ItemFromEvilListOfEvil) => {return navigator.userAgent.match(ItemFromEvilListOfEvil);})) {
 		if(DebugMode){
 			console.log("Phone! Screen Resized ",visualViewport.width,"x",visualViewport.height)
-			document.documentElement.style.setProperty('--body-padding', '0px')
-			document.documentElement.style.setProperty('--body-row-direction', 'column')
-			document.documentElement.style.setProperty('--cntainr-width', '100%')
-			document.documentElement.style.setProperty('--cntainr-align-items', 'start')
-			document.documentElement.style.setProperty('--cntainr2-width', 'calc(100% - 40px)')
-			document.documentElement.style.setProperty('--cntainr2-padding-bottom', '0px')
-			document.documentElement.style.setProperty('--namesakes-display', 'none')
-			document.documentElement.style.setProperty('--outputresult-width', 'calc(100% - 4px)')
-			document.documentElement.style.setProperty('--inputstuff-width', 'calc(100% - 8px)')
 		}
+		document.documentElement.style.setProperty('--body-padding', '0px')
+		document.documentElement.style.setProperty('--body-row-direction', 'column')
+		document.documentElement.style.setProperty('--cntainr-width', '100%')
+		document.documentElement.style.setProperty('--cntainr-align-items', 'start')
+		document.documentElement.style.setProperty('--cntainr2-width', 'calc(100% - 40px)')
+		document.documentElement.style.setProperty('--cntainr2-padding-bottom', '0px')
+		document.documentElement.style.setProperty('--namesakes-display', 'none')
+		document.documentElement.style.setProperty('--outputresult-width', 'calc(100% - 4px)')
+		document.documentElement.style.setProperty('--inputstuff-width', 'calc(100% - 8px)')
 	} else {
 		if(DebugMode){
 			console.log("Desktop! Screen Resized ",visualViewport.width,"x",visualViewport.height)
-			// document.documentElement.style.setProperty('--body-padding', '40px')
-			// document.documentElement.style.setProperty('--body-row-direction', 'row-reverse')
-			// document.documentElement.style.setProperty('--cntainr-width', '60vw')
-			// document.documentElement.style.setProperty('--cntainr-align-items', 'center')
-			// document.documentElement.style.setProperty('--cntainr2-width', '20w')
-			// document.documentElement.style.setProperty('--cntainr2-padding-bottom', '20px')
-			// document.documentElement.style.setProperty('--namesakes-display', 'block')
-			// document.documentElement.style.setProperty('--outputresult-width', '95%')
-			// document.documentElement.style.setProperty('--inputstuff-width', '95%')
-			/* code leftover from an unused feature */
 		}
+		// document.documentElement.style.setProperty('--body-padding', '40px')
+		// document.documentElement.style.setProperty('--body-row-direction', 'row-reverse')
+		// document.documentElement.style.setProperty('--cntainr-width', '60vw')
+		// document.documentElement.style.setProperty('--cntainr-align-items', 'center')
+		// document.documentElement.style.setProperty('--cntainr2-width', '20w')
+		// document.documentElement.style.setProperty('--cntainr2-padding-bottom', '20px')
+		// document.documentElement.style.setProperty('--namesakes-display', 'block')
+		// document.documentElement.style.setProperty('--outputresult-width', '95%')
+		// document.documentElement.style.setProperty('--inputstuff-width', '95%')
+		/* code leftover from an unused feature */
 	}
 }
 CheckUserAgentOrWindowSize()
