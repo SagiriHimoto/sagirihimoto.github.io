@@ -4,17 +4,15 @@ const ResultTextArea = document.getElementById("ShowThemWhereItsAt");
 const ViewSelector = document.getElementById("ViewSelect");
 const SortSelector = document.getElementById("SortSelect");
 /* chars value is used as a pool of characters when making random entries by pressing F8 */
-var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var BiggyListyThingy = [];
-var DebugMode = false;
-var ThemeMode = false;
-var FocusInput = true;
+const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const BiggyListyThingy = [];
+const ModesVars = [DebugMode = false,ThemeMode = false,FocusInput = true]
 
 /* This works as mobile css */
 const EvilListOfEvil = [/Android/i,/iPhone/i,/iPad/i,/iPod/i,/BlackBerry/i,/Windows Phone/i,/webOS/i];
 function CheckUserAgentOrWindowSize() {
     if(EvilListOfEvil.some((ItemFromEvilListOfEvil) => {return navigator.userAgent.match(ItemFromEvilListOfEvil);})) {
-		if(DebugMode){
+		if(ModesVars.DebugMode){
 			console.log("Phone! Screen Resized ",visualViewport.width,"x",visualViewport.height)
 		}
 		document.documentElement.style.setProperty('--body-padding', '0px')
@@ -27,7 +25,7 @@ function CheckUserAgentOrWindowSize() {
 		document.documentElement.style.setProperty('--outputresult-width', 'calc(100% - 4px)')
 		document.documentElement.style.setProperty('--inputstuff-width', 'calc(100% - 8px)')
 	} else {
-		if(DebugMode){
+		if(ModesVars.DebugMode){
 			console.log("Desktop! Screen Resized ",visualViewport.width,"x",visualViewport.height)
 		}
 		// document.documentElement.style.setProperty('--body-padding', '40px')
@@ -45,27 +43,27 @@ function CheckUserAgentOrWindowSize() {
 CheckUserAgentOrWindowSize()
 
 function ToggleDebugMode() {
-	if (DebugMode) {
-		DebugMode = false;
+	if (ModesVars.DebugMode) {
+		ModesVars.DebugMode = false;
 		document.getElementById("Toaster").style.top = "-60px";
 		document.querySelector(".cntainr2").style.backgroundColor = "var(--dark-color)"
 	} else {
-		DebugMode = true;
+		ModesVars.DebugMode = true;
 		document.getElementById("Toaster").style.top = "0px";
 		document.querySelector(".cntainr2").style.backgroundColor = "var(--darkest-color)"
 	}
-	document.querySelector("#Toaster").innerText = "Debug Mode: " + DebugMode;
-	console.log("Debug Mode: " + DebugMode)
+	document.querySelector("#Toaster").innerText = "Debug Mode: " + ModesVars.DebugMode;
+	console.log("Debug Mode: " + ModesVars.DebugMode)
 }
 function ToggleThemeMode() {
-	if (ThemeMode) {
-		ThemeMode = false;
+	if (ModesVars.ThemeMode) {
+		ModesVars.ThemeMode = false;
 		document.documentElement.style.setProperty('--text-color', '#000');
 		document.documentElement.style.setProperty('--bg-color', '#fff');
 		document.documentElement.style.setProperty('--dark-color', '#ddd');
 		document.documentElement.style.setProperty('--darkest-color', '#ccc');
 	} else {
-		ThemeMode = true;
+		ModesVars.ThemeMode = true;
 		document.documentElement.style.setProperty('--text-color', '#fff');
 		document.documentElement.style.setProperty('--bg-color', '#00122e');
 		document.documentElement.style.setProperty('--dark-color', '#000917');
@@ -77,7 +75,7 @@ function RemoveSelected() {
 	let ErasedAmount = 0;
 	/* ^ This is here to avoid this function deleting an entry and skipping the next one because of out of sync indexing */
 	for (let i=1;i<=ResultTextArea.childElementCount;i++) {
-		if (DebugMode) {console.log("Child " + i + " is " +window.getSelection().containsNode(document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")"), true))}
+		if (ModesVars.DebugMode) {console.log("Child " + i + " is " +window.getSelection().containsNode(document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")"), true))}
 		if (window.getSelection().containsNode(document.querySelector("#ShowThemWhereItsAt > p:nth-child("+i+")"))){
 			BiggyListyThingy.splice(i-ErasedAmount-1,1);
 			ErasedAmount++;
@@ -97,7 +95,7 @@ function RemoveSelected() {
 			/* preventDefault() is only relevant when this code is called by an event type of Keydown (Backspace) */
 		}
 	}
-	if(event.type=="keydown"){if(ErasedAmount==0){RemoveLast()}}else{if(DebugMode){console.log("Doesn't remove last when triggered by anything other than a keydown event (Backspace)")}};
+	if(event.type=="keydown"){if(ErasedAmount==0){RemoveLast()}}else{if(ModesVars.DebugMode){console.log("Doesn't remove last when triggered by anything other than a keydown event (Backspace)")}};
 	console.log(event.type)/* If user doesn't select anything, remove last */
 	RedrawTextArea()
 }
@@ -151,14 +149,14 @@ function RedrawTextArea() {
 	for(let i=0;i < formattedOutput.split("\n").length;i++){
 		ResultTextArea.innerHTML += "<p>" + formattedOutput.split("\n")[i].replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;') + "</p>";/* This is done a separate step from join(), to prevent a bug with "Raw" display's square bracket apearing outside the paragraph. Paragraph tag opener could be placed in the previous step, but for consistency and more intuitive coding, I chose not to */
 	}
-	if (DebugMode) {console.log(formattedOutput)}
+	if (ModesVars.DebugMode) {console.log(formattedOutput)}
 	ResultTextArea.style.height = ResultTextArea.scrollHeight - 4 + "px";
 };
 /* Checks if add button was pressed, duh */
 AddButton.addEventListener("click", () => {
 	if (KeyInput.value.indexOf("=") == -1) {
 		if (document.getElementById("AddEqual").checked && KeyInput.value != "") {KeyInput.value += "="} else
-		{if (DebugMode) {console.log("Value has no = sign, returned as error")}}
+		{if (ModesVars.DebugMode) {console.log("Value has no = sign, returned as error")}}
 		return;
 	}
 	let key = KeyInput.value.split("=")[0].trim();
@@ -174,12 +172,12 @@ AddButton.addEventListener("click", () => {
 		return;
 	}
 });
-KeyInput.addEventListener("focusin", (event) => {FocusInput = true;if(DebugMode){console.log("Currently inputing")}});
-KeyInput.addEventListener("focusout", (event) => {FocusInput = false;if(DebugMode){console.log("No longer inputing")}});
+KeyInput.addEventListener("focusin", (event) => {ModesVars.FocusInput = true;if(ModesVars.DebugMode){console.log("Currently inputing")}});
+KeyInput.addEventListener("focusout", (event) => {ModesVars.FocusInput = false;if(ModesVars.DebugMode){console.log("No longer inputing")}});
 /* ^^ using event listeners, because :state() is too new, and not supported on even slightly outdated browser versions */
 document.addEventListener("keydown", KeyPresser);
 function KeyPresser(event) {
-	if (DebugMode) {
+	if (ModesVars.DebugMode) {
 		console.log(event)
 	}
 	switch(event.key){
@@ -211,13 +209,13 @@ function KeyPresser(event) {
 		ToggleDebugMode()
 		break;
 		case "F5":
-		if (!DebugMode) {event.preventDefault()
+		if (!ModesVars.DebugMode) {event.preventDefault()
 		if (confirm("Are you sure you want to reload the page? Your progress will be lost!!!!")) {
 			window.location.reload();
 		}}
 		break;
 		case "Enter":
-		if(FocusInput){AddButton.click()}
+		if(ModesVars.FocusInput){AddButton.click()}
 		break;
 	}
 };
