@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Deviation viewer</title>
+<style>
+.image{max-height:70vh;max-width:70vw;}
+body{display:flex;justify-content:center;align-items:center;flex-direction:column;gap:10px;background-image:url("https://movingbrands.com/wp-content/uploads/2023/09/MB-DeviantArt-002-Post-2000x1125.jpg");background-size:cover;}
+.stamp-border{--radius:5px;padding:15px;background-image:radial-gradient(var(--radius),transparent 98%,white),linear-gradient(white 0 0);background-repeat:round,no-repeat;background-position:calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),50%;background-size:calc(var(--radius) * 3) calc(var(--radius) * 3),calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);}
+.stamp-border2{padding:15px;background-color:#000;border-radius:15px;}
+textarea{width:50vw;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="stamp-border2"><div class="stamp-border"><img id="outputimg" src="https://via.placeholder.com/2000" class="image"></div></div>
+<input id="inputfield" type="text"/>
+<textarea id="textarea"></textarea>
+<script crossorigin=anonymous >
+const outputfield = document.getElementById("outputimg");
+const inputfield = document.getElementById("inputfield");
+const textfield = document.getElementById("textarea");
+
+document.body.addEventListener("keydown", (e) => {
+	switch(e.key){
+	case "Enter":
+	console.log("Executing getData with input field value: ",inputfield.value)
+	getData("https://backend.deviantart.com/oembed?url="+inputfield.value+"&format=jsonp&callback=?")
+	break;
+	case "v":
+	case "V":
+	if(e.ctrlKey){
+	navigator.clipboard.readText()
+	.then(text => {
+	if(text!==""){inputfield.value = text;
+	console.log('Pasted content: ', text);
+	getData("https://backend.deviantart.com/oembed?url=" + text + "&format=jsonp&callback=?");
+	console.log("Executing getData with input field value: ",text)
+	}})
+	.catch(err => {
+	console.error('Failed to read clipboard contents: ', err);
+	});}
+	break;
+	}
+});
+
+let url = new URL(window.location.href);
+if(url.searchParams.get("q")!==null || url.searchParams.get("q")==""){
+	inputfield.value = url.searchParams.get("q");
+	getData("https://backend.deviantart.com/oembed?url=" + url.searchParams.get("q") + "&format=jsonp&callback=?");
+}else{
+	navigator.clipboard.readText()
+	.then(text => {
+	if(text!==""){inputfield.value = text;
+	getData("https://backend.deviantart.com/oembed?url=" + text + "&format=jsonp&callback=?");
+	console.log('Pasted content: ', text);
+	}})
+	.catch(err => {
+	console.error('Failed to read clipboard contents: ', err);
+	});
+}
+async function getData(inputvalue) {
+  const url = inputvalue;
+  try {
+	$.getJSON(url, function(data) {
+	console.log("req URL: " + url + "\n", "Deviation by: " + data.author_name + "\n", "Image URL: " + data.url);
+	textfield.innerText = "Deviation by: " + data.author_name + "\nreq URL: " + url + "\nImage URL: " + data.url;
+	window.history.pushState(data.url,data.title,"?q="+inputfield.value)
+	outputfield.src = data.url
+	textfield.style.height = textfield.scrollHeight - 4 + "px";
+	});
+	} catch (error) {
+		console.error(error.message);
+	}
+}
+</script>
+</body>
+</html>

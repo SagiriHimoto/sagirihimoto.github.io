@@ -62,12 +62,17 @@
 	const wordsize = document.getElementById('wordsize');
 	const wordspacing = document.getElementById('wordspacing');
     const outputText = document.getElementById('outputText');
+	const isntColor = document.getElementById('isntcolor');
 
     inputField.addEventListener('input', function() {
         outputText.textContent = inputField.value;
     });
 	imageField.addEventListener('input', function() {
-        document.body.style.backgroundImage = "url("+imageField.value+")";
+		if (isntColor.checked) {
+			document.body.style.backgroundImage = "url("+imageField.value+")";
+		} else {
+			document.body.style.backgroundColor = imageField.value;
+		}
     });
 	wordsize.addEventListener('input', function() {
         outputText.style.fontSize = wordsize.value + "px";
